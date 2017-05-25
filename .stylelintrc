@@ -2,6 +2,7 @@
   "ignoreFiles": [
     "node_modules/**/*",
     ".tmp/**/*",
+    "build/**/*",
     "src/**/_**.css"
   ],
   "rules": {

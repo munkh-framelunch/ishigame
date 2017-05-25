@@ -17,7 +17,7 @@
     "gulp:script": "gulp script",
     "lint": "run-p lint:*",
     "lint:style": "stylelint 'src/**/*.css'",
-    "lint:script": "eslint 'src/**/*.js'"
+    "lint:script": "eslint --ext .js,.jsx src/"
   },
   "private": true,
   "dependencies": {
