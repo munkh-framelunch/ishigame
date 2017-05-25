@@ -1,0 +1,30 @@
+@import "_variables.css";
+@import "_reset.css";
+
+body {
+    background: lightblue;
+}
+
+.button {
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    background: url("/assets/img_about.png");
+
+    &-large {
+        height: 50px;
+        font-size: 18px;
+    }
+    &-red {
+        color: #fff;
+        background-color: var(--red);
+    }
+    &-blue {
+        color: #fff;
+        background-color: var(--blue);
+    }
+}
