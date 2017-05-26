@@ -6,19 +6,19 @@ import minifyHtml from 'gulp-minify-html';
 import browser from 'browser-sync';
 import conf from '../config';
 
-gulp.task('ejs', () => (
-  gulp.src(conf.ejs.src)
+gulp.task('view', () => (
+  gulp.src(conf.view.src)
     .pipe(plumber())
     .pipe(ejs(null, {}, { ext: '.html' }))
-    .pipe(rename(conf.ejs.rename))
+    .pipe(rename(conf.view.rename))
     .pipe(gulp.dest(conf.dest.dev))
     .pipe(browser.reload({stream: true}))
 ));
 
-gulp.task('b.ejs', () => (
-  gulp.src(conf.ejs.src)
+gulp.task('b.view', () => (
+  gulp.src(conf.view.src)
     .pipe(ejs(null, {}, { ext: '.html' }))
     .pipe(minifyHtml())
-    .pipe(rename(conf.ejs.rename))
+    .pipe(rename(conf.view.rename))
     .pipe(gulp.dest(conf.dest.build))
 ));
