@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import anime from 'animejs';
-import Header from '../components/header/header';
+import MainVisual from '../components/MainVisual/MainVisual';
 
 const Home = () => (
   <div>
@@ -19,7 +19,7 @@ const About = () => (
 ReactDOM.render((
   <BrowserRouter>
     <div id="content">
-      <Header />
+      <MainVisual name="abdfgkda" />
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>

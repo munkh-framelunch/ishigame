@@ -9,8 +9,8 @@ export default {
   },
 
   view: {
-    src: ['src/views/**/*.ejs', '!src/views/**/_*'],
-    watch: ['src/views/**/*.ejs'],
+    src: ['src/views/**/*.ejs', '!src/views/**/_'],
+    watch: ['src/views/**/*.ejs', 'src/modules/**/*.ejs'],
     rename(path) {
       if (path.basename !== 'index') {
         let basename = 'index';
@@ -32,13 +32,13 @@ export default {
   },
 
   style: {
-    src: ['src/styles/**/*', '!src/styles/**/_*'],
-    watch: ['src/styles/**/*.css']
+    src: ['src/styles/**/*.css', '!src/styles/**/_'],
+    watch: ['src/styles/**/*.css', 'src/modules/**/*.css']
   },
 
   script: {
-    src: ['src/scripts/**/*', '!src/scripts/**/_*'],
-    watch: ['src/scripts/**/*', 'src/components/**/*']
+    src: ['src/scripts/**/*.{js,jsx}', '!src/scripts/**/_*'],
+    watch: ['src/scripts/**/*', 'src/components/**/*', 'src/modules/**/*.{js,jsx}']
   },
 
   browser: {
