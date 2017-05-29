@@ -11,7 +11,8 @@ const entry = {
     'babel-polyfill',
     'react',
     'react-dom',
-    'animejs'
+    'animejs',
+    'rx-lite'
   ],
 };
 

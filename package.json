@@ -22,16 +22,17 @@
   "private": true,
   "dependencies": {
     "animejs": "^2.0.2",
-    "babel-polyfill": "^6.23.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "rx-lite": "^4.0.8"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.5.1",
     "babel-preset-react": "^6.24.1",
     "browser-sync": "^2.18.12",

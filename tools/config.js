@@ -9,7 +9,7 @@ export default {
   },
 
   view: {
-    src: ['src/views/**/*.ejs', '!src/views/**/_'],
+    src: ['src/views/**/*.ejs', '!src/views/**/_*'],
     watch: ['src/views/**/*.ejs', 'src/modules/**/*.ejs'],
     rename(path) {
       if (path.basename !== 'index') {
@@ -32,7 +32,7 @@ export default {
   },
 
   style: {
-    src: ['src/styles/**/*.css', '!src/styles/**/_'],
+    src: ['src/styles/**/*.css', '!src/styles/**/_*'],
     watch: ['src/styles/**/*.css', 'src/modules/**/*.css']
   },
 

@@ -2,7 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import anime from 'animejs';
+import Rx from 'rx-lite';
 import MainVisual from '../components/MainVisual/MainVisual';
+
+/* With an observer */
+const observer = Rx.Observer.create(
+  (x) => {
+    console.log('Next: %s', x);
+  },
+  (err) => {
+    console.log('Error: %s', err);
+  },
+  () => {
+    console.log('Completed');
+  });
+
+const source = Rx.Observable.range(0, 3);
+source.subscribe(observer);
 
 const Home = () => (
   <div>
