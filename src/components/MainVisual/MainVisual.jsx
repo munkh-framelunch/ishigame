@@ -1,4 +1,5 @@
 import React from 'react';
+import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 
 import style from './MainVisual.css';
@@ -19,6 +20,9 @@ export default class MainVisual extends React.Component {
     this.onChangeInput = this.onChangeInput.bind(this);
     this.onChangeCheckbox = this.onChangeCheckbox.bind(this);
     this.onChangeRadio = this.onChangeRadio.bind(this);
+  }
+  componentDidMount() {
+    console.log(findDOMNode(this));
   }
 
   onChangeInput(e) {
