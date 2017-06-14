@@ -5,6 +5,7 @@ import postcss from 'gulp-postcss';
 import customProperties from 'postcss-custom-properties';
 import nested from 'postcss-nested';
 import importCss from 'postcss-import';
+import customMedia from 'postcss-custom-media';
 import flexbugsFixes from 'postcss-flexbugs-fixes';
 import nthChildFix from 'postcss-nth-child-fix';
 import url from 'postcss-url';
@@ -25,6 +26,7 @@ gulp.task('style', () => (
     .pipe(postcss([
       importCss,
       customProperties,
+      customMedia,
       nested,
       flexbugsFixes,
       nthChildFix,
@@ -40,6 +42,7 @@ gulp.task('b.style', () => (
     .pipe(postcss([
       importCss,
       customProperties,
+      customMedia,
       nested,
       flexbugsFixes,
       nthChildFix,

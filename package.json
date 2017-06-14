@@ -6,7 +6,7 @@
   "author": "Yuichi Ikeda <ikeda@framelunch.jp>",
   "license": "MIT",
   "engines": {
-    "node": ">=6.10.3"
+    "node": ">=6.11.0"
   },
   "scripts": {
     "start": "gulp",
@@ -22,10 +22,12 @@
   "private": true,
   "dependencies": {
     "animejs": "^2.0.2",
+    "jquery": "^3.2.1",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0",
     "rx-lite": "^4.0.8"
   },
   "devDependencies": {
@@ -55,6 +57,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.0",
     "npm-run-all": "^4.0.2",
+    "postcss-custom-media": "^6.0.0",
     "postcss-custom-properties": "^6.0.1",
     "postcss-flexbugs-fixes": "^3.0.0",
     "postcss-import": "^10.0.0",

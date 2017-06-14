@@ -5,6 +5,7 @@ export default {
   },
 
   copy: {
+    static: ['src/*.*'],
     assets: ['src/assets/**/*'],
   },
 
