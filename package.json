@@ -23,12 +23,7 @@
   "dependencies": {
     "animejs": "^2.0.2",
     "jquery": "^3.2.1",
-    "prop-types": "^15.5.10",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-router-dom": "^4.1.1",
-    "redux": "^3.6.0",
-    "rx-lite": "^4.0.8"
+    "jquery-touch-events": "^1.0.7"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",

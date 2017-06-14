@@ -9,12 +9,8 @@ import conf from '../config';
 const entry = {
   vendor: [
     'babel-polyfill',
-    'react',
-    'react-dom',
-    'redux',
     'animejs',
-    'rx-lite',
-    'jquery'
+    'jquery',
   ],
 };
 

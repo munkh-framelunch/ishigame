@@ -18,6 +18,8 @@
 * [Webpack](https://webpack.github.io/)
 * [babel](https://babeljs.io/)
     * [env](https://github.com/babel/babel-preset-env)
+    
+JSで扱うimgはimportを用いてinline化する    
 
 #### CSS
 
@@ -26,6 +28,10 @@
     * [css-mqpacker](https://github.com/hail2u/node-css-mqpacker)
     * [postcss-flexbugs-fixes](https://github.com/luisrudge/postcss-flexbugs-fixes)
     * [postcss-nth-child-fix](https://github.com/MattDiMu/postcss-nth-child-fix)
+
+* [ECSS](http://ecss.io/)    
+    
+CSSでのurl指定はinline化される。
 
 #### html
 
@@ -48,9 +54,9 @@
 |- /build/                  # yarn run buildコマンドで生成されるコンパイル済みファイル
 |- /src
 |    |- /assets/            # フロントエンドに必要な静的リソース
-|    |- /components/        # Reactによるコンポーネント
+|    |- /components/        # WEBコンポーネント
 |    |- /libs/              # Javascriptのライブラリ
-|    |- /modules/           # 
+|    |- /modules/           # ページの主要なパーツを構成するモジュール
 |    |- /scripts/           # Javascriptのエントリーディレクトリ
 |    |- /styles/            # CSSのエントリーディレクトリ
 |    |- /views/             # EJSのエントリーディレクトリ

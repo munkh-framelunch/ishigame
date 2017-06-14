@@ -39,12 +39,13 @@ export default {
 
   script: {
     src: ['src/scripts/**/*.{js,jsx}', '!src/scripts/**/_*'],
-    watch: ['src/scripts/**/*', 'src/components/**/*', 'src/modules/**/*.{js,jsx}']
+    watch: ['src/scripts/**/*', 'src/components/**/*', 'src/modules/**/*.{js,jsx}', 'src/libs/**/*.js']
   },
 
   browser: {
     notify: false,
     port: 9012,
+    reloadDebounce: 500,
     server: {
       baseDir: ['.tmp'],
       routes: {
