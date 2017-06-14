@@ -5,6 +5,10 @@
 
 body {
     background: lightblue;
+
+    @media (--sp) {
+        background: gray;
+    }
 }
 
 .button {
