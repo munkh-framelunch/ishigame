@@ -16,6 +16,9 @@ const babelOptions = {
     }],
     'react'
   ],
+  plugins: [
+    'transform-object-rest-spread'
+  ],
   cacheDirectory: true,
   babelrc: false
 };
