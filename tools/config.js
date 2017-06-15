@@ -9,6 +9,18 @@ export default {
     assets: ['src/assets/**/*'],
   },
 
+  rev: {
+    src: 'build/**/*.{js,css,png,gif,jpg,jpeg,svg,eot,ttf,woff,ico}',
+    dest: 'build',
+    manifestFileName: 'manifest.json',
+    isEnable: true
+  },
+
+  revReplace: {
+    src: ['build/index.html', 'build/**/*.{js,css,html}'],
+    dest: 'build',
+  },
+
   view: {
     src: ['src/views/**/*.ejs', '!src/views/**/_*'],
     watch: ['src/views/**/*.ejs', 'src/modules/**/*.ejs'],
