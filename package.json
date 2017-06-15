@@ -19,7 +19,7 @@
     "start": "NODE_ENV=development gulp",
     "build": "NODE_ENV=production gulp build",
     "gulp:clean": "gulp clean",
-    "gulp:ejs": "NODE_ENV=development gulp ejs",
+    "gulp:view": "NODE_ENV=development gulp view",
     "gulp:style": "NODE_ENV=development gulp style",
     "gulp:script": "NODE_ENV=development gulp script",
     "lint": "run-p lint:*",
