@@ -16,12 +16,12 @@
     "not ie 10"
   ],
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build",
+    "start": "NODE_ENV=development gulp",
+    "build": "NODE_ENV=production gulp build",
     "gulp:clean": "gulp clean",
-    "gulp:ejs": "gulp ejs",
-    "gulp:style": "gulp style",
-    "gulp:script": "gulp script",
+    "gulp:ejs": "NODE_ENV=development gulp ejs",
+    "gulp:style": "NODE_ENV=development gulp style",
+    "gulp:script": "NODE_ENV=development gulp script",
     "lint": "run-p lint:*",
     "lint:style": "stylelint 'src/**/*.css'",
     "lint:script": "eslint --ext .js,.jsx src/"
