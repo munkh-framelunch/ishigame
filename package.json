@@ -1,8 +1,8 @@
 {
-  "name": "caravanist",
+  "name": "scaffold-frontend",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@framelunch.com:nissan/caravanist.git",
+  "repository": "git@github.com:framelunch/scaffold-frontend.git",
   "author": "Yuichi Ikeda <ikeda@framelunch.jp>",
   "license": "MIT",
   "engines": {
