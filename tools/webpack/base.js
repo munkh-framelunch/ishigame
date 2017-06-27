@@ -77,7 +77,7 @@ export default {
                 customProperties,
                 nested,
                 importCss({root: loader.resourcePath}),
-                autoprefixer
+                autoprefixer({ grid: true })
               ]
             }
           }

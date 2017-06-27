@@ -31,7 +31,7 @@ gulp.task('style', () => (
       flexbugsFixes,
       nthChildFix,
       url(urlOptions),
-      autoprefixer,
+      autoprefixer({ grid: true }),
     ]))
     .pipe(gulp.dest(`${conf.dest.dev}/css`))
     .pipe(browser.reload({stream: true}))
@@ -46,7 +46,7 @@ gulp.task('b.style', () => (
       nested,
       flexbugsFixes,
       nthChildFix,
-      autoprefixer,
+      autoprefixer({ grid: true }),
       cssnano,
     ]))
     .pipe(gulp.dest(`${conf.dest.build}/css`))
