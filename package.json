@@ -16,7 +16,9 @@
     "not ie 10"
   ],
   "scripts": {
+    "postinstall": "flow-typed install",
     "start": "NODE_ENV=development gulp",
+    "prebuild": "run-s typecheck",
     "build": "NODE_ENV=production gulp build",
     "build:check": "run-s build server",
     "server": "http-server ./build -p 23000 -o --cors",
@@ -24,6 +26,7 @@
     "gulp:view": "NODE_ENV=development gulp view",
     "gulp:style": "NODE_ENV=development gulp style",
     "gulp:script": "NODE_ENV=development gulp script",
+    "typecheck": "flow",
     "lint": "run-p lint:*",
     "lint:style": "stylelint 'src/**/*.css'",
     "lint:script": "eslint --ext .js,.jsx src/"
@@ -41,6 +44,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.5.1",
+    "babel-preset-flow": "^6.23.0",
     "browser-sync": "^2.18.12",
     "css-loader": "^0.28.2",
     "cssnano": "^3.10.0",
@@ -49,6 +53,8 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
+    "flow-bin": "^0.48.0",
+    "flow-typed": "^2.1.2",
     "globby": "^6.1.0",
     "gulp": "^3.9.1",
     "gulp-ejs": "^3.0.1",
