@@ -33,6 +33,7 @@ gulp.task('style', () => (
       url(urlOptions),
       autoprefixer({ grid: true }),
     ]))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(`${conf.dest.dev}/css`))
     .pipe(browser.reload({stream: true}))
 ));
