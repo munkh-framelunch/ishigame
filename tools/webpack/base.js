@@ -13,8 +13,7 @@ const babelOptions = {
     ['env', {
       targets: { browsers: browserslist },
       debug: process.env.NODE_ENV === 'development'
-    }],
-    'react'
+    }]
   ],
   plugins: [
     'transform-object-rest-spread'
