@@ -245,6 +245,8 @@ tags
 
 ### Manual ###
 
+# flow declare files
+/flow-typed
 # build files (development)
 /.tmp
 # build files (production)
