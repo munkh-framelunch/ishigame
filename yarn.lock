@@ -2424,6 +2424,26 @@ eslint-config-airbnb@^15.0.1:
   dependencies:
     eslint-config-airbnb-base "^11.2.0"
 
+"eslint-config-framelunch@git+https://github.com/framelunch/eslint-config-framelunch":
+  version "1.0.0"
+  resolved "git+https://github.com/framelunch/eslint-config-framelunch#5e2b35cb4b37685c988b68dae784e4c1e1ff9299"
+  dependencies:
+    eslint "^3.19.0"
+    eslint-config-airbnb "^15.0.1"
+    eslint-plugin-import "^2.2.0"
+    eslint-plugin-jsx-a11y "^5.0.1"
+    eslint-plugin-react "^7.0.1"
+
+"eslint-config-framelunch@git+https://github.com/framelunch/eslint-config-framelunch#v0.0.1":
+  version "0.0.1"
+  resolved "git+https://github.com/framelunch/eslint-config-framelunch#397a051c8d502d26a7719901f58a4035a7bda8cb"
+  dependencies:
+    eslint "^3.19.0"
+    eslint-config-airbnb "^15.0.1"
+    eslint-plugin-import "^2.2.0"
+    eslint-plugin-jsx-a11y "^5.0.1"
+    eslint-plugin-react "^7.0.1"
+
 eslint-import-resolver-node@^0.2.0:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.2.3.tgz#5add8106e8c928db2cba232bcd9efa846e3da16c"
@@ -2454,7 +2474,7 @@ eslint-plugin-import@^2.2.0:
     minimatch "^3.0.3"
     pkg-up "^1.0.0"
 
-eslint-plugin-jsx-a11y@^5.0.3:
+eslint-plugin-jsx-a11y@^5.0.1:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-5.0.3.tgz#4a939f76ec125010528823331bf948cc573380b6"
   dependencies:
