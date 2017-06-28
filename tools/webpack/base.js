@@ -13,8 +13,7 @@ const babelOptions = {
     ['env', {
       targets: { browsers: browserslist },
       debug: process.env.NODE_ENV === 'development'
-    }],
-    'react'
+    }]
   ],
   plugins: [
     'transform-object-rest-spread'
@@ -78,7 +77,7 @@ export default {
                 customProperties,
                 nested,
                 importCss({root: loader.resourcePath}),
-                autoprefixer
+                autoprefixer({ grid: true })
               ]
             }
           }

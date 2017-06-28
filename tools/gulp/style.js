@@ -6,8 +6,7 @@ import customProperties from 'postcss-custom-properties';
 import nested from 'postcss-nested';
 import importCss from 'postcss-import';
 import customMedia from 'postcss-custom-media';
-import flexbugsFixes from 'postcss-flexbugs-fixes';
-import nthChildFix from 'postcss-nth-child-fix';
+import cssFixes from 'postcss-fixes';
 import url from 'postcss-url';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
@@ -28,11 +27,11 @@ gulp.task('style', () => (
       customProperties,
       customMedia,
       nested,
-      flexbugsFixes,
-      nthChildFix,
+      cssFixes,
       url(urlOptions),
-      autoprefixer,
+      autoprefixer({ grid: true }),
     ]))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(`${conf.dest.dev}/css`))
     .pipe(browser.reload({stream: true}))
 ));
@@ -44,9 +43,8 @@ gulp.task('b.style', () => (
       customProperties,
       customMedia,
       nested,
-      flexbugsFixes,
-      nthChildFix,
-      autoprefixer,
+      cssFixes,
+      autoprefixer({ grid: true }),
       cssnano,
     ]))
     .pipe(gulp.dest(`${conf.dest.build}/css`))
