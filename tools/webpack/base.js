@@ -11,7 +11,13 @@ import { browserslist } from '../../package.json';
 const babelOptions = {
   presets: [
     ['env', {
+      // package.jsonで指定したbrowserslistを利用する
       targets: { browsers: browserslist },
+      // babel-polyfillのうちbrowserslistを踏まえて必要なものだけ読み込む
+      useBuiltIns: true,
+      // productionの場合tree shakingを有効化
+      modules: process.env.NODE_ENV === 'production' ? false : 'commonjs',
+      // developmentの際にデバッグ情報を出力する
       debug: process.env.NODE_ENV === 'development'
     }]
   ],
@@ -24,7 +30,8 @@ const babelOptions = {
 
 const entry = {
   vendor: [
-    'babel-polyfill',
+    // useBuiltIns: trueが効かなくなるためvendorからは外す
+    // 'babel-polyfill',
     'animejs',
     'jquery',
   ],
