@@ -49,6 +49,8 @@
     "css-loader": "^0.28.4",
     "cssnano": "^3.10.0",
     "eslint-config-framelunch": "git+https://github.com/framelunch/eslint-config-framelunch#v0.0.1",
+    "flow-bin": "^0.49.1",
+    "flow-typed": "^2.1.2",
     "globby": "^6.1.0",
     "gulp": "^3.9.1",
     "gulp-ejs": "^3.0.1",
