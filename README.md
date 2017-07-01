@@ -64,7 +64,9 @@
 ## Directory Layout
 ```text
 .
+|- /.github/                # GitHub用issue, PRテンプレ
 |- /build/                  # yarn run buildコマンドで生成されるコンパイル済みファイル
+|- /flow-typed/             # flowtype用型ファイル(自動生成ディレクトリ)
 |- /src
 |    |- /assets/            # フロントエンドに必要な静的リソース
 |    |- /components/        # WEBコンポーネント
@@ -81,6 +83,7 @@
 |- .babelrc                 # babel設定ファイル(gulp, webpackの設定ファイル用)
 |- .eslintignore            # eslintから除外するファイル
 |- .eslintrc                # eslint設定ファイル
+|- .gitattributes           # git設定 yarn.lockをバイナリ扱いなど
 |- .gitignore               # git管理対象外を記述
 |- .node-version            # ndenv用のバージョン指定
 |- .stylelintrc             # stylelint設定ファイル
