@@ -1,6 +1,16 @@
 # FRAME LUNCH scaffold for frontend development
 
+## Requierment
+
+* macOS: >= 10.12
+    * or Ubuntu 16.04
+* Node: >= v6.9
+
 ## Important Technology
+
+### Node.js manager
+
+* [ndenv](https://github.com/riywo/ndenv)
 
 ### Package manager
 
@@ -17,21 +27,22 @@
 
 * [Webpack](https://webpack.github.io/)
 * [babel](https://babeljs.io/)
-    * [env](https://github.com/babel/babel-preset-env)
-    
-JSで扱うimgはimportを用いてinline化する    
+    * [babel-preset-flow](https://github.com/babel/babel/tree/master/packages/babel-preset-flow)
+    * [babel-preset-env](https://github.com/babel/babel-preset-env)
+    * [babel-plugin-transform-object-rest-spread](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-object-rest-spread)
+
+※JSで扱うimgはimportを用いてinline化する
 
 #### CSS
 
-* [PostCSS](http://postcss.org/) 
+* [PostCSS](http://postcss.org/)
     * [autoprefixer](https://github.com/postcss/autoprefixer)
     * [css-mqpacker](https://github.com/hail2u/node-css-mqpacker)
-    * [postcss-flexbugs-fixes](https://github.com/luisrudge/postcss-flexbugs-fixes)
-    * [postcss-nth-child-fix](https://github.com/MattDiMu/postcss-nth-child-fix)
+    * [postcss-fixes](https://github.com/mattdimu/postcss-fixes)
 
-* [ECSS](http://ecss.io/)    
-    
-CSSでのurl指定はinline化される。
+* [ECSS](http://ecss.io/)
+
+※CSSでのurl指定はinline化される。
 
 #### html
 
@@ -41,12 +52,14 @@ CSSでのurl指定はinline化される。
 
 #### JavaScript
 
+* [flow](https://flow.org/)
 * [ESLint](http://eslint.org/)
-    * [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
+    * [eslint-config-framelunch](https://github.com/framelunch/eslint-config-framelunch)
 
 #### CSS
 
 * [stylelint](https://stylelint.io/)
+    * [stylelint-config-framelunch](https://github.com/framelunch/stylelint-config-framelunch)
 
 ## Directory Layout
 ```text
@@ -65,7 +78,7 @@ CSSでのurl指定はinline化される。
 |    |- /gulp/              # gulpタスクを記述したjs。タスクごとに1ファイルとする
 |    |- /webpack/           # webpackビルド設定
 |    |- /config.js          # ビルド関係設定ファイル
-|- .babelrc                 # babel設定ファイル
+|- .babelrc                 # babel設定ファイル(gulp, webpackの設定ファイル用)
 |- .eslintignore            # eslintから除外するファイル
 |- .eslintrc                # eslint設定ファイル
 |- .gitignore               # git管理対象外を記述
