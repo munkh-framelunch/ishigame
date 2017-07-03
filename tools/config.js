@@ -24,7 +24,7 @@ export default {
   view: {
     src: ['src/views/**/*.ejs', '!src/views/**/_*'],
     watch: ['src/views/**/*.ejs', 'src/modules/**/*.ejs'],
-    rename(path) {
+    rename (path) {
       if (path.basename !== 'index') {
         let basename = 'index';
         let dirname = `${path.dirname}/`;
