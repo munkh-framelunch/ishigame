@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
 
-    <title><%=conf.title%></title>
-    <meta name="description" content="<%=conf.description%>">
+    <title><%= conf.title %></title>
+    <meta name="description" content="<%= conf.description %>">
 
     <meta property="og:title" content="" />
     <meta property="og:description" content="" />
@@ -15,17 +15,15 @@
 
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
-    <%
-    conf.script = conf.script || [];
-    if (typeof conf.script === 'string') { conf.script = [conf.script]; }
-
+<%
     conf.style = conf.style || [];
-    if (typeof conf.style === 'string') { conf.style = [conf.style]; }
-    %>
-
-    <% for(var i=0; i<conf.style.length; i++){ %>
-    <link rel="stylesheet" href="/css/<%=conf.style[i]%>">
-    <% } %>
+    if (typeof conf.style === 'string') {
+        conf.style = [conf.style];
+    }
+    conf.style.forEach(style => {
+%>
+    <link rel="stylesheet" href="<%= style.match(/^https?:/) != null ? style : `/css/${style}` %>">
+<% }) %>
 
 </head>
 <body>

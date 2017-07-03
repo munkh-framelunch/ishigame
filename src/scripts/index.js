@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import touchEvents from 'jquery-touch-events';
 import anime from 'animejs';
+
 import notice from '../libs/notice';
 import state from '../libs/state';
 import events from './_events';
