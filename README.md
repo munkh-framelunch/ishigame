@@ -62,10 +62,11 @@
     * [stylelint-config-framelunch](https://github.com/framelunch/stylelint-config-framelunch)
 
 ## Directory Layout
+
 ```text
 .
 |- /.github/                # GitHub用issue, PRテンプレ
-|- /build/                  # yarn run buildコマンドで生成されるコンパイル済みファイル
+|- /build/                  # yarn buildコマンドで生成されるコンパイル済みファイル
 |- /flow-typed/             # flowtype用型ファイル(自動生成ディレクトリ)
 |- /src
 |    |- /assets/            # フロントエンドに必要な静的リソース
@@ -90,8 +91,10 @@
 |- gulpfile.babel.js        # gulp実行ファイル
 |- package.json             # The list of 3rd party libraries for nodeJs
 |- README.md                # README
+|- site-config.json         # EJSビルド時に渡されるオプション値
 |- yarn.lock                # yarn用利用npmsバージョン管理ファイル
 ```
+
 ## Settings
 - ProjectのSettingでsrcディレクトリをrootに設定する
 - assetは必ず絶対パスで記述する
