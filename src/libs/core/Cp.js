@@ -109,4 +109,5 @@ class Cp {
   }
 }
 
+// ファクトリ関数を公開
 export default () => new Cp();

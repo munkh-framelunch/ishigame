@@ -1,38 +1,39 @@
 import $ from 'jquery';
+
 import notice from '../libs/notice';
 
 const $window = $(window);
 
-function scroll() {
-  let a = 0;
+export function subscribeOnScrollEvent({ intervalMSec } = { intervalMSec: 300 }) {
+  let lastTopPosition = 0;
+
   $window.on('scroll', () => {
     const top = $window.scrollTop();
-    a = top;
+    lastTopPosition = top;
     if (top !== 0) {
       notice.publish('scroll', [top]);
     } else {
       setTimeout(() => {
-        if (a === 0) {
-          notice.publish('scroll', [a]);
+        if (lastTopPosition === 0) {
+          notice.publish('scroll', [lastTopPosition]);
         }
-      }, 100);
+      }, intervalMSec);
     }
   });
   notice.publish('scroll', [$window.scrollTop()]);
 }
 
-function resize() {
-  let time;
+export function subscribeOnResizeEvent({ intervalMSec } = { intervalMSec: 300 }) {
+  let timerID;
+
   $window.on('resize', () => {
-    clearTimeout(time);
-    time = setTimeout(() => {
-      notice.publish('resize', [$window]);
-    }, 300);
+    clearTimeout(timerID);
+    timerID = setTimeout(() => notice.publish('resize', [$window]), intervalMSec);
   });
   notice.publish('resize', [$window]);
 }
 
-export default () => {
-  scroll();
-  resize();
+export default function subscriveEvents() {
+  subscribeOnScrollEvent();
+  subscribeOnResizeEvent();
 };
