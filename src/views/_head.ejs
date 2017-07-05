@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
 
     <title><%= conf.title %></title>
+    <meta name="title" content="<%= conf.title %>">
     <meta name="description" content="<%= conf.description %>">
 
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:image" content="" />
+    <meta property="og:title" content="<%= conf.title %>" />
+    <meta property="og:description" content="<%= conf.description %>" />
+<% if (typeof og === 'object') { %>
+    <meta property="og:type" content="<%= og.type %>" />
+    <meta property="og:image" content="<%= og.image %>" />
+    <meta property="og:url" content="<%= og.url %>" />
+    <meta property="og:site_name" content="<%= og.siteName %>" />
+<% } %>
+
+<% if (typeof twitter === 'object') { %>
+    <meta name="twitter:card" content="<%= twitter.card %>" />
+    <meta name="twitter:site" content="<%= twitter.site %>" />
+<% } %>
 
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 

@@ -8,7 +8,6 @@
 
     ga('create', '<%= conf.ga %>', 'auto');
     ga('send', 'pageview');
-
 </script>
 <% } %>
 
@@ -22,6 +21,5 @@ conf.script.forEach(script => {
 %>
 <script src="<%= script.match(/^https?:/) != null ? script : `/js/${script}` %>"></script>
 <% }) %>
-
 </body>
 </html>
