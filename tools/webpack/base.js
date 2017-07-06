@@ -19,7 +19,8 @@ const babelOptions = {
       modules: process.env.NODE_ENV === 'production' ? false : 'commonjs',
       // developmentの際にデバッグ情報を出力する
       debug: process.env.NODE_ENV === 'development'
-    }]
+    }],
+    'flow'
   ],
   plugins: [
     'transform-object-rest-spread'
