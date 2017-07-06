@@ -2,9 +2,28 @@
 
 ## Requierment
 
-* macOS: >= 10.12
-    * or Ubuntu 16.04
-* Node: >= v6.9
+* macOS: >= `10.12`
+    * or Ubuntu `16.04`
+* Node: >= `v6.9`
+* yarn: >= `0.24.5`
+    * or npm >= `3.10.10`
+    
+### Optionals
+
+## How to use
+
+```bash
+# install npm packages
+yarn
+# start watch & development server
+yarn start
+# create production files
+yarn build
+# check JavaScript types
+yarn typecheck
+# check codes quality
+yarn lint
+```
 
 ## Important Technology
 
@@ -68,6 +87,7 @@
 |- /.github/                # GitHub用issue, PRテンプレ
 |- /build/                  # yarn buildコマンドで生成されるコンパイル済みファイル
 |- /flow-typed/             # flowtype用型ファイル(自動生成ディレクトリ)
+|- /node_modules/           # 3rd-party libraries and utilities for nodeJs
 |- /src
 |    |- /assets/            # フロントエンドに必要な静的リソース
 |    |- /components/        # WEBコンポーネント
@@ -76,7 +96,6 @@
 |    |- /scripts/           # Javascriptのエントリーディレクトリ
 |    |- /styles/            # CSSのエントリーディレクトリ
 |    |- /views/             # EJSのエントリーディレクトリ
-|- /node_modules/           # 3rd-party libraries and utilities for nodeJs
 |- /tools/                  # ビルドツール関連
 |    |- /gulp/              # gulpタスクを記述したjs。タスクごとに1ファイルとする
 |    |- /webpack/           # webpackビルド設定
@@ -84,6 +103,7 @@
 |- .babelrc                 # babel設定ファイル(gulp, webpackの設定ファイル用)
 |- .eslintignore            # eslintから除外するファイル
 |- .eslintrc                # eslint設定ファイル
+|- .flowconfig              # flowtype設定ファイル
 |- .gitattributes           # git設定 yarn.lockをバイナリ扱いなど
 |- .gitignore               # git管理対象外を記述
 |- .node-version            # ndenv用のバージョン指定
@@ -91,7 +111,7 @@
 |- gulpfile.babel.js        # gulp実行ファイル
 |- package.json             # The list of 3rd party libraries for nodeJs
 |- README.md                # README
-|- site-config.json         # EJSビルド時に渡されるオプション値
+|- site-config.json         # EJSビルド時に渡されるオプション値 metaタグなどに使うこと想定
 |- yarn.lock                # yarn用利用npmsバージョン管理ファイル
 ```
 
