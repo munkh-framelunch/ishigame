@@ -36,4 +36,4 @@ export function subscribeOnResizeEvent({ intervalMSec } = { intervalMSec: 300 })
 export default function subscriveEvents() {
   subscribeOnScrollEvent();
   subscribeOnResizeEvent();
-};
+}

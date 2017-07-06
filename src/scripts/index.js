@@ -31,7 +31,7 @@ class Main {
         { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
         { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
         { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
-        { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 }
+        { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
       ],
       duration: 2000,
       loop: false,
@@ -49,13 +49,15 @@ class Main {
 
 const main = new Main();
 window.addEventListener('DOMContentLoaded', main.onDOMContentLoaded);
-
-notice.listen('init', data => console.log(data));
-notice.publish('init', [123]);
 notice.listen('resize', main.onWindowResize);
 notice.listen('scroll', main.onScrollTop);
 subscribeEvents();
 
+/*
+ * 以下テスト用
+ */
+notice.listen('init', data => console.log(data));
+notice.publish('init', [123]);
 state.listen('add:a', v => console.log('add:a', v));
 state.listen('add:c', v => console.log('add:c', v));
 state.change('a/b/c', [5678]);
