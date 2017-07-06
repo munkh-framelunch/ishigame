@@ -34,6 +34,7 @@
   "private": true,
   "dependencies": {
     "animejs": "^2.0.2",
+    "babel-polyfill": "^6.23.0",
     "jquery": "^3.2.1",
     "jquery-touch-events": "^1.0.7"
   },
@@ -42,7 +43,6 @@
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.5.2",
     "babel-preset-flow": "^6.23.0",
     "browser-sync": "^2.18.12",

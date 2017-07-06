@@ -14,10 +14,6 @@ import browser from 'browser-sync';
 
 import conf from '../config';
 
-const urlOptions = [
-  { filter: ['./**/*'], url: 'inline' },
-];
-
 gulp.task('style', () => (
   gulp.src(conf.style.src)
     .pipe(plumber())
@@ -28,12 +24,12 @@ gulp.task('style', () => (
       customMedia,
       nested,
       cssFixes,
-      url(urlOptions),
-      autoprefixer({ grid: true }),
+      url(conf.style.urlOption),
+      autoprefixer(conf.style.autoprefixerOption)
     ]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(`${conf.dest.dev}/css`))
-    .pipe(browser.reload({stream: true}))
+    .pipe(browser.reload({ stream: true }))
 ));
 
 gulp.task('b.style', () => (
@@ -44,7 +40,7 @@ gulp.task('b.style', () => (
       customMedia,
       nested,
       cssFixes,
-      autoprefixer({ grid: true }),
+      autoprefixer(conf.style.autoprefixerOption),
       cssnano,
     ]))
     .pipe(gulp.dest(`${conf.dest.build}/css`))

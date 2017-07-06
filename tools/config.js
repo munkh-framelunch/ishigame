@@ -46,7 +46,9 @@ export default {
 
   style: {
     src: ['src/styles/**/*.css', '!src/styles/**/_*'],
-    watch: ['src/styles/**/*.css', 'src/modules/**/*.css']
+    watch: ['src/styles/**/*.css', 'src/modules/**/*.css'],
+    urlOption: { filter: ['./**/*'], url: 'inline' },
+    autoprefixerOption: { grid: true }
   },
 
   script: {
