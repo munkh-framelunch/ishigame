@@ -3,9 +3,13 @@
     --color-main: #f0f0f0;
     --color-font: #111;
 
-    /* TODO: 各種色 */
     --color-red: #e23B0a;
+    --color-orange: #e23b0a;
+    --color-yellow: #e2a70a;
+    --color-pink: #e20ab1;
     --color-blue: #3f52e2;
+    --color-green: #0ae251;
+    --color-emerald: #0ae2a7;
     --color-gray: #777;
 
     --z-lv-1: 1;
