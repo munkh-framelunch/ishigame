@@ -36,7 +36,8 @@
     "animejs": "^2.0.2",
     "babel-polyfill": "^6.23.0",
     "jquery": "^3.2.1",
-    "jquery-touch-events": "^1.0.7"
+    "jquery-touch-events": "^1.0.7",
+    "libraries-frontend-framelunch": "framelunch/libraries-frontend-framelunch"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",

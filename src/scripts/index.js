@@ -3,8 +3,8 @@ import $ from 'jquery';
 import touchEvents from 'jquery-touch-events';
 import anime from 'animejs';
 
-import notice from '../libs/notice';
-import state from '../libs/state';
+import notice from 'libraries-frontend-framelunch/js/notice';
+import state from 'libraries-frontend-framelunch/js/state';
 import subscribeEvents from './_events';
 
 class Main {

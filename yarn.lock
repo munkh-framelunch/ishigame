@@ -4284,6 +4284,10 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+libraries-frontend-framelunch@framelunch/libraries-frontend-framelunch:
+  version "0.0.1"
+  resolved "https://codeload.github.com/framelunch/libraries-frontend-framelunch/tar.gz/d9349ad5184fd8d5c0fdc7404e64772ead25948e"
+
 liftoff@^2.1.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/liftoff/-/liftoff-2.3.0.tgz#a98f2ff67183d8ba7cfaca10548bd7ff0550b385"
