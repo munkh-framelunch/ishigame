@@ -60,7 +60,7 @@ export default {
 
   browser: {
     notify: false,
-    port: 9012,
+    port: 9015,
     reloadDebounce: 500,
     server: {
       baseDir: ['.tmp'],
