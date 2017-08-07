@@ -1,0 +1,55 @@
+.title_bg-5 {
+    right: -30%;
+    background: url("/assets/common/main_tit_bg_05.png");
+    @media (--sp) {
+        right: -50%;
+    }
+}
+.title-5 {
+    margin-left: 15%;
+    @media (--sp) {
+        margin-left: 0;
+    }
+}
+.big_image {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40%;
+    background-color: #888;
+    margin-top: -5px;
+}
+.thumb {
+    &_wrapper {
+        width: 90%;
+        position: relative;
+        overflow: hidden;
+        height: 60px;
+        margin: 20px auto 10vw;
+    }
+    &_box {
+        position: absolute;
+        top: 0;
+        left: -11.32%;
+        width: 122.64%;
+        display: flex;
+        justify-content: space-between;
+    }
+    &_item {
+        width: 7.69%;
+        height: 50px;
+        background-color: darkslategrey;
+        text-align: center;
+        color: #fff;
+        line-height: 50px;
+    }
+    &_selector {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 9.43%;
+        height: 4px;
+        background-color: var(--blue);
+        transform: translateX(-50%);
+    }
+}

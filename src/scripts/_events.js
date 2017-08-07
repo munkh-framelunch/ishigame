@@ -4,23 +4,27 @@ import notice from 'libraries-frontend-framelunch/js/notice';
 
 const $window = $(window);
 
-export function subscribeOnScrollEvent({ intervalMSec } = { intervalMSec: 300 }) {
+export function subscribeOnScrollEvent({ intervalMSec } = { intervalMSec: 50 }) {
   let lastTopPosition = 0;
-
+  let timerId;
   $window.on('scroll', () => {
     const top = $window.scrollTop();
     lastTopPosition = top;
     if (top !== 0) {
       notice.publish('scroll', [top]);
+      clearTimeout(timerId);
+      timerId = setTimeout(() => {
+        notice.publish('scrollInterval', [lastTopPosition]);
+      }, intervalMSec);
     } else {
       setTimeout(() => {
-        if (lastTopPosition === 0) {
-          notice.publish('scroll', [lastTopPosition]);
-        }
-      }, intervalMSec);
+        notice.publish('scroll', [lastTopPosition]);
+        notice.publish('scrollInterval', [lastTopPosition]);
+      }, 100);
     }
   });
   notice.publish('scroll', [$window.scrollTop()]);
+  notice.publish('scrollInterval', [$window.scrollTop()]);
 }
 
 export function subscribeOnResizeEvent({ intervalMSec } = { intervalMSec: 300 }) {

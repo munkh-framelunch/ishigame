@@ -1,0 +1,17 @@
+.title_bg-7 {
+    right: -30%;
+    background: url("/assets/common/main_tit_bg_07.png");
+    @media (--sp) {
+        right: -50%;
+    }
+}
+.title-7 {
+    margin-left: 15%;
+    @media (--sp) {
+        margin-left: 0;
+    }
+}
+.contact_box {
+    background-color: var(--gray);
+    height: 10vh;
+}

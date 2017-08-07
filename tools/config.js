@@ -7,13 +7,14 @@ export default {
   copy: {
     static: ['src/*.*'],
     assets: ['src/assets/**/*'],
+    favicon: ['src/favicon.ico']
   },
 
   rev: {
     src: 'build/**/*.{js,css,png,gif,jpg,jpeg,svg,eot,ttf,woff,ico}',
     dest: 'build',
     manifestFileName: 'manifest.json',
-    isEnable: true
+    isEnable: false
   },
 
   revReplace: {
@@ -60,7 +61,7 @@ export default {
 
   browser: {
     notify: false,
-    port: 9015,
+    port: 9020,
     reloadDebounce: 500,
     server: {
       baseDir: ['.tmp'],

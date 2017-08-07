@@ -1,0 +1,33 @@
+:root {
+    --blue: #133ec8;
+    --gray: #f8f8f8;
+    --pc: 1366px;
+    --tb: 1024px;
+    --sp: 768px;
+    --sp-mini: 480px;
+    --main-timing: cubic-bezier(0, 1, 0.25, 0.84);
+}
+.is-pc {
+    display: block;
+    @media (--sp) {
+        display: none;
+    }
+}
+.is-sp {
+    display: none;
+    @media (--sp) {
+        display: block;
+    }
+}
+.is-tb {
+    display: none;
+    @media (--tb) {
+        display: block;
+    }
+}
+@custom-media --pc (max-width: 1366px);
+@custom-media --tb (max-width: 1024px);
+@custom-media --sp (max-width: 768px);
+@custom-media --sp-mini (max-width: 480px);
+@custom-media --min-height (min-height: 550px);
+

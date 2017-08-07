@@ -1,0 +1,88 @@
+.title_bg-6 {
+    right: 10%;
+    margin-top: 10%;
+    background: url("/assets/common/main_tit_bg_06.png");
+    @media (--sp) {
+        margin-top: 0;
+        right: -50%;
+    }
+}
+.title-6 {
+    margin-left: 25%;
+    @media (--sp) {
+        margin-left: 0;
+    }
+}
+.section-6_bg {
+    position: absolute;
+    top: -35%;
+    right: 70%;
+    width: 65%;
+    padding-top: 10%;
+    z-index: -11;
+    @media (--sp) {
+        display: none;
+    }
+}
+.access {
+    &_box {
+        float: right;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 80%;
+        margin-top: 4%;
+        margin-bottom: 5vw;
+        @media (--tb) {
+            width: 100%;
+        }
+    }
+    &_text {
+        width: 48%;
+        @media (--sp) {
+            margin-top: 5%;
+            width: 100%;
+        }
+    }
+    &_map {
+        width: 48%;
+        margin-left: 4%;
+        @media (--sp) {
+            margin-top: 4%;
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}
+.table {
+    width: 100%;
+    tr {
+        vertical-align: top;
+    }
+    th {
+        font-weight: bold;
+        text-align: left;
+        color: var(--blue);
+        padding-right: 20px;
+        white-space: nowrap;
+    }
+    td {
+        padding-bottom: 20px;
+    }
+}
+.clearfix {
+    &:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+.map {
+    background-color: #ccc;
+    position: relative;
+    width: 100%;
+    padding-top: 70%;
+    & + & {
+        margin-top: 30px;
+    }
+}

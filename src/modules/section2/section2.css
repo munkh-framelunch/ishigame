@@ -1,0 +1,42 @@
+.title-2 {
+    margin-left: 40%;
+    padding-top: 11% !important;
+    @media (--sp) {
+        margin-left: -5%;
+    }
+}
+.title_bg-2 {
+    right: -20%;
+    background: url("/assets/common/main_tit_bg_02.png");
+    @media (--sp) {
+        right: -30%;
+    }
+}
+.section-2_h2 {
+    margin-top: 8%;
+    margin-bottom: 5%;
+    text-align: center;
+    @media (--sp) {
+        text-align: left;
+    }
+}
+.flex_text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5%;
+    @media (--sp) {
+        width: 100%;
+        padding-bottom: 0;
+    }
+    &_item {
+        width: 45%;
+        margin-bottom: 5%;
+        @media (--sp) {
+            width: 100%;
+        }
+    }
+}

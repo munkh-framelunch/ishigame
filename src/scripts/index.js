@@ -6,20 +6,70 @@ import anime from 'animejs';
 import notice from 'libraries-frontend-framelunch/js/notice';
 import state from 'libraries-frontend-framelunch/js/state';
 import subscribeEvents from './_events';
+import '../modules/navigation/navigation';
+import '../modules/section1/section1';
+import '../modules/section2/section2';
+import '../modules/section3/section3';
+import '../modules/section4/section4';
+import '../modules/section5/section5';
+import '../modules/section6/section6';
+import '../modules/section7/section7';
+import getPosition from '../modules/position';
 
+$.extend($.easing,
+  {
+    def: 'easeOutQuad',
+    easeOutExpo(x, t, b, c, d) {
+      return (t === d) ? b + c : c * (-Math.pow(2, -10 * t / d) + 1) + b;
+    },
+  });
+const disableScroll = () => {
+  $('body').on('wheel mousewheel', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+};
+const enableScroll = () => {
+  $('body').unbind('wheel mousewheel');
+};
+
+const goTo = (pos) => {
+  disableScroll();
+  notice.publish('going', [true]);
+  $('body,html').animate({
+    scrollTop: pos,
+  }, 1000, 'easeOutExpo', () => {
+    enableScroll();
+    notice.publish('going', [false]);
+  });
+};
+const section0 = $('#sec0');
+const section1 = $('#sec1');
+let begin = 0;
 class Main {
   constructor() {
-    this.setTouchEventsToJQuery();
+    touchEvents($);
     this.onDOMContentLoaded = this.onDOMContentLoaded.bind(this);
     this.onWindowResize = this.onWindowResize.bind(this);
     this.onScrollTop = this.onScrollTop.bind(this);
   }
 
-  setTouchEventsToJQuery() {
-    touchEvents($);
-  }
-
   onDOMContentLoaded() {
+    if ($(window).scrollTop() > $(window).height()) {
+      begin = 1;
+    }
+    notice.publish('init', []);
+    $('#prev').on('click', () => {
+      $('.thumb_box').animate({
+        left: '-22.64%',
+      }, 800, () => {
+        $('.thumb_item').eq(0).remove();
+        $('.thumb_box').append('<div class="thumb_item">new</div>');
+        $('.thumb_box').css({
+          left: '-11.32%',
+        });
+      });
+    });
     anime({
       targets: '#test-img',
       translateX: [
@@ -36,6 +86,14 @@ class Main {
       duration: 2000,
       loop: false,
     });
+    $('a').on('click', (event) => {
+      const hash = $(event.currentTarget)[0].hash;
+      const $elm = $(hash);
+      if (hash !== '') {
+        event.preventDefault();
+        goTo($elm.offset().top);
+      }
+    });
   }
 
   onWindowResize($window) {
@@ -43,22 +101,28 @@ class Main {
   }
 
   onScrollTop(scrollTop) {
-    console.log('scrollTop:', scrollTop);
+    if (getPosition(section1).pos === 0 && begin === 0) {
+      goTo(section1.offset().top);
+      begin = 2;
+      notice.listen('going', (status) => {
+        if (!status) {
+          begin = 1;
+        }
+      });
+    }
+    if (getPosition(section0).pos === 0 && begin === 1) {
+      goTo(section0.offset().top);
+      begin = 2;
+      notice.listen('going', (status) => {
+        if (!status) {
+          begin = 0;
+        }
+      });
+    }
   }
 }
-
 const main = new Main();
 window.addEventListener('DOMContentLoaded', main.onDOMContentLoaded);
 notice.listen('resize', main.onWindowResize);
 notice.listen('scroll', main.onScrollTop);
 subscribeEvents();
-
-/*
- * 以下テスト用
- */
-notice.listen('init', data => console.log(data));
-notice.publish('init', [123]);
-state.listen('add:a', v => console.log('add:a', v));
-state.listen('add:c', v => console.log('add:c', v));
-state.change('a/b/c', [5678]);
-

@@ -1,3 +1,133 @@
 @import "_global.css";
-@import "../modules/header/header.css";
+@import "_variables.css";
+@import "../modules/navigation/navigation.css";
+@import "../modules/section0/section0.css";
+@import "../modules/section1/section1.css";
+@import "../modules/section2/section2.css";
+@import "../modules/section3/section3.css";
+@import "../modules/section4/section4.css";
+@import "../modules/section5/section5.css";
+@import "../modules/section6/section6.css";
+@import "../modules/section7/section7.css";
 @import "../modules/footer/footer.css";
+body {
+    background-color: #fff;
+    line-height: 1.8;
+}
+img {
+    width: 100%;
+}
+.main {
+    width: 100%;
+    overflow: hidden;
+}
+.inner {
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Section */
+.section {
+    position: relative;
+    width: 100%;
+    @media (--sp) {
+        margin-bottom: 14%;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.title {
+    padding-top: 14%;
+    width: 50%;
+    @media (--sp) {
+        width: 100%;
+    }
+    &_bg {
+        width: 100%;
+        position: absolute;
+        top: 35px;
+        right: 0;
+        z-index: 0;
+        height: 10vw;
+        background-size: auto 100%;
+        background-repeat: repeat-x;
+        transition: background-position 1s linear;
+    }
+}
+.text_box {
+    padding: 56px;
+    box-sizing: border-box;
+    position: relative;
+    @media (--sp) {
+        padding: 0;
+    }
+}
+.h2 {
+    font-size: 28px;
+    font-weight: bold;
+    @media (--pc) {
+        font-size: 1.4vw;
+    }
+    @media (--tb) {
+        font-size: 2.1vw;
+    }
+    @media (--sp) {
+        font-size: 5vw;
+    }
+    @media (--sp-mini) {
+        font-size: 20px;
+    }
+}
+.h3 {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+    @media (--pc) {
+        font-size: 1.1vw;
+    }
+    @media (--tb) {
+        font-size: 1.65vw;
+    }
+    @media (--sp) {
+        font-size: 2.2vw;
+    }
+    @media (--sp-mini) {
+        font-size: 16px;
+    }
+}
+.p {
+    font-size: 16px;
+    @media (--pc) {
+        font-size: 1vw;
+    }
+    @media (--tb) {
+        font-size: 1.5vw;
+    }
+    @media (--sp) {
+        font-size: 2vw;
+    }
+    @media (--sp-mini) {
+        font-size: 14px;
+    }
+}
+.txt-center {
+    text-align: center;
+}
+.hide {
+    opacity: 0;
+    transform: translateY(20px);
+}
+.anim {
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    &-delay {
+        transition-delay: 0.4s;
+    }
+    &-delay1 {
+        transition-delay: 0.8s;
+    }
+}

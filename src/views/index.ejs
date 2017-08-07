@@ -3,17 +3,24 @@ const conf = {
     title : 'top',
     description : 'This is top page',
     style: 'index.css',
-    script: 'index.js'
+    script: 'index.js',
+    rel: ''
 };
 %>
 
 <% include _head.ejs %>
-<% include ../modules/header/header.ejs %>
 
 <main id="main" class="main" role="main">
-    <h2>Main header</h2>
-    <img id="test-img" src="/assets/img_about.png">
+    <% include ../modules/navigation/navigation.ejs %>
+    <% include ../modules/section0/section0.ejs %>
+    <% include ../modules/section1/section1.ejs %>
+    <% include ../modules/section2/section2.ejs %>
+    <% include ../modules/section3/section3.ejs %>
+    <% include ../modules/section4/section4.ejs %>
+    <% include ../modules/section5/section5.ejs %>
+    <% include ../modules/section6/section6.ejs %>
+    <% include ../modules/section7/section7.ejs %>
 </main>
-
 <% include ../modules/footer/footer.ejs %>
+
 <% include _foot.ejs %>
