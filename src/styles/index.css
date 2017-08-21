@@ -1,5 +1,6 @@
 @import "_global.css";
 @import "_variables.css";
+@import "../modules/load/load.css";
 @import "../modules/navigation/navigation.css";
 @import "../modules/section0/section0.css";
 @import "../modules/section1/section1.css";
@@ -9,10 +10,12 @@
 @import "../modules/section5/section5.css";
 @import "../modules/section6/section6.css";
 @import "../modules/section7/section7.css";
+@import "../modules/modal/modal.css";
 @import "../modules/footer/footer.css";
 body {
     background-color: #fff;
     line-height: 1.8;
+    overflow: hidden;
 }
 img {
     width: 100%;
@@ -130,4 +133,7 @@ img {
     &-delay1 {
         transition-delay: 0.8s;
     }
+}
+.mb5 {
+    margin-bottom: 5%;
 }

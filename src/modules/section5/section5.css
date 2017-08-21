@@ -5,8 +5,14 @@
         right: -50%;
     }
 }
+#sec5 {
+    position: relative;
+    z-index: 9;
+}
 .title-5 {
     margin-left: 15%;
+    position: relative;
+    z-index: 2;
     @media (--sp) {
         margin-left: 0;
     }
@@ -15,41 +21,108 @@
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 40%;
     background-color: #888;
     margin-top: -5px;
+    position: relative;
+    z-index: 1;
+    img {
+        background-color: var(--gray);
+    }
+    @media (--sp) {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+.slide_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    cursor: pointer;
+    @media (--sp) {
+        transform: none;
+        top: 108%;
+        width: 30px;
+    }
+    &-left {
+        right: 102%;
+        @media (--sp) {
+            right: auto;
+            left: 0;
+        }
+    }
+    &-right {
+        left: 102%;
+        @media (--sp) {
+            right: 0;
+            left: auto;
+        }
+    }
+    &:hover {
+        .on {
+            opacity: 1;
+        }
+        .off {
+            opacity: 0;
+        }
+    }
+    .on {
+        opacity: 0;
+    }
+    img {
+        transition: opacity 0.4s;
+        transform: translateZ(0);
+        width: 100%;
+        vertical-align: top;
+    }
 }
 .thumb {
     &_wrapper {
         width: 90%;
         position: relative;
         overflow: hidden;
-        height: 60px;
+        padding-top: 6.4%;
         margin: 20px auto 10vw;
+        @media (--sp) {
+            display: none;
+        }
     }
     &_box {
         position: absolute;
         top: 0;
-        left: -11.32%;
-        width: 122.64%;
+        left: 0;
+        width: 100%;
         display: flex;
         justify-content: space-between;
     }
     &_item {
         width: 7.69%;
-        height: 50px;
         background-color: darkslategrey;
-        text-align: center;
-        color: #fff;
-        line-height: 50px;
+        cursor: pointer;
     }
     &_selector {
         position: absolute;
         bottom: 0;
         left: 50%;
-        width: 9.43%;
+        width: 7.69%;
         height: 4px;
         background-color: var(--blue);
         transform: translateX(-50%);
+    }
+    &_number {
+        display: none;
+        span {
+            font-weight: bold;
+        }
+        .number-blue {
+            color: var(--blue);
+            font-size: 20px;
+        }
+        .number-gray {
+            color: var(--grayText);
+        }
+        @media (--sp) {
+            display: block;
+        }
     }
 }

@@ -1,9 +1,69 @@
 <div id="sec7" class="section">
     <div class="title_bg title_bg-7"></div>
     <div class="inner">
-        <div class="title title-7">
+        <div class="title title-7 anim hide">
             <img src="<%=conf.rel%>/assets/common/main_tit_07.png">
         </div>
     </div>
-    <div class="contact_box"></div>
+    <div class="contact_container">
+        <div class="inner">
+            <div class="contact_box">
+                <div class="contact_row">
+                    <div class="contact_form">
+                        <p class="p">
+                            会社名
+                        </p>
+                        <input class="contact_input p" type="text" id="contactCompany">
+                    </div>
+                    <div class="contact_form">
+                        <p class="p">
+                            お名前
+                        </p>
+                        <input class="contact_input p" type="text" id="contactName">
+                    </div>
+                    <div class="contact_form">
+                        <p class="p">
+                            メールアドレス
+                        </p>
+                        <input class="contact_input p" type="text" id="contactMail">
+                    </div>
+                    <div class="contact_form">
+                        <p class="p">
+                            電話番号
+                        </p>
+                        <input class="contact_input p" type="text" id="contactPhone">
+                    </div>
+                </div>
+                <div class="contact_row">
+                    <div class="contact_form">
+                        <p class="p">
+                            &nbsp;
+                        </p>
+                        <div class="contact_input contact_select p">
+                            <span>選択してください</span>
+                            <div class="contact_select_box">
+                                <div class="p contact_select_option">
+                                    Option 1
+                                </div>
+                                <div class="p contact_select_option">
+                                    Option 2
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact_form contact_textarea_holder">
+                        <p class="p">
+                            お問い合わせ内容
+                        </p>
+                        <textarea class="contact_input contact_textarea p" id="contactMsg"></textarea>
+                    </div>
+                </div>
+                <div class="contact_full">
+                    <div class="contact_button p" id="contactSubmit">
+                        確認する
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

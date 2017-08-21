@@ -6,6 +6,7 @@ import anime from 'animejs';
 import notice from 'libraries-frontend-framelunch/js/notice';
 import state from 'libraries-frontend-framelunch/js/state';
 import subscribeEvents from './_events';
+import '../modules/modal/modal';
 import '../modules/navigation/navigation';
 import '../modules/section1/section1';
 import '../modules/section2/section2';
@@ -59,33 +60,6 @@ class Main {
       begin = 1;
     }
     notice.publish('init', []);
-    $('#prev').on('click', () => {
-      $('.thumb_box').animate({
-        left: '-22.64%',
-      }, 800, () => {
-        $('.thumb_item').eq(0).remove();
-        $('.thumb_box').append('<div class="thumb_item">new</div>');
-        $('.thumb_box').css({
-          left: '-11.32%',
-        });
-      });
-    });
-    anime({
-      targets: '#test-img',
-      translateX: [
-        { value: 100, duration: 1200 },
-        { value: 0, duration: 800 },
-      ],
-      rotate: '1turn',
-      backgroundColor: [
-        { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
-        { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
-        { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
-        { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
-      ],
-      duration: 2000,
-      loop: false,
-    });
     $('a').on('click', (event) => {
       const hash = $(event.currentTarget)[0].hash;
       const $elm = $(hash);
@@ -97,7 +71,16 @@ class Main {
   }
 
   onWindowResize($window) {
-    console.log('onWindowResize:', $window.width(), $window.height());
+    setTimeout(() => {
+      $('.load_progress_container').animate({
+        width: 0,
+      }, 800, () => {
+        $('.load').fadeOut();
+        $('body').css({
+          overflow: 'auto',
+        });
+      });
+    }, 400);
   }
 
   onScrollTop(scrollTop) {
@@ -126,3 +109,22 @@ window.addEventListener('DOMContentLoaded', main.onDOMContentLoaded);
 notice.listen('resize', main.onWindowResize);
 notice.listen('scroll', main.onScrollTop);
 subscribeEvents();
+
+/*
+anime({
+  targets: '#test-img',
+  translateX: [
+    { value: 100, duration: 1200 },
+    { value: 0, duration: 800 },
+  ],
+  rotate: '1turn',
+  backgroundColor: [
+    { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
+    { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
+    { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
+    { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
+  ],
+  duration: 2000,
+  loop: false,
+});
+*/

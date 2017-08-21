@@ -1,3 +1,13 @@
+import $ from 'jquery';
+
+let focused = false;
+$(window).focus(() => {
+  focused = true;
+});
+
+$(window).blur(() => {
+  focused = false;
+});
 export default class movingTitle {
   constructor(item) {
     this.title = item;
@@ -5,10 +15,12 @@ export default class movingTitle {
     this.moveX = 0;
   }
   move() {
-    this.moveX += this.speed;
-    this.title.css({
-      backgroundPosition: `${this.moveX}px 0`,
-    });
+    if (focused) {
+      this.moveX += this.speed;
+      this.title.css({
+        backgroundPosition: `${this.moveX}px 0`,
+      });
+    }
   }
   start() {
     this.timer = setTimeout(() => {
