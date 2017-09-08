@@ -43,7 +43,9 @@ class Slide {
       const beginIndex = src.indexOf('_');
       const lastIndex = src.indexOf('.jpg');
       src = `${src.substr(0, beginIndex)}_${fixNumber(this.current)}${src.substr(lastIndex, src.length - 1)}`;
+      const srcBg = src.replace(/gallery_/, 'tmb_');
       this.bigImage.attr('src', src);
+      this.bigImage.css('background-image', `url("${srcBg}")`);
       this.currentIndex.html(fixNumber(this.current));
     }
   }

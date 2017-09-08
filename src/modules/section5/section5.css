@@ -27,6 +27,8 @@
     z-index: 1;
     img {
         background-color: var(--gray);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     @media (--sp) {
         width: 100%;

@@ -21,6 +21,7 @@
     &_item {
         width: 50%;
         padding-top: 36%;
+        min-height: 300px;
         position: relative;
         cursor: pointer;
         @media (--sp) {
