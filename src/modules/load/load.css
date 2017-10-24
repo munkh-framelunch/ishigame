@@ -31,6 +31,7 @@
             height: 3px;
             margin-right: auto;
             margin-left: auto;
+            transition: 0.4s;
         }
     }
     &_text {
@@ -40,13 +41,5 @@
         @media (--sp) {
             width: 60%;
         }
-    }
-}
-@keyframes loading {
-    from {
-        width: 100%;
-    }
-    to {
-        width: 10%;
     }
 }

@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="a5f939aa-e710-4c60-8305-8538e0ce71c2" name="ishigame" url="http://www.igm.co.jp/">
-        <fileTransfer host="hs38.drive.ne.jp" port="21" rootFolder="/home/cs13820/igm.co.jp/">
+        <fileTransfer host="hs38.drive.ne.jp" port="21" rootFolder="/home/cs13820/igm.co.jp/htdocs">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

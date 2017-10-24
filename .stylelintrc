@@ -33,6 +33,6 @@
     "selector-no-universal": true,
     "declaration-block-no-shorthand-property-overrides": true,
     "indentation": 4,
-    "selector-max-specificity": "0,2,0"
+    "selector-max-specificity": "1,2,0"
   }
 }

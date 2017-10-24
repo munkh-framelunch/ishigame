@@ -6,7 +6,8 @@ import MovingTitle from '../titleBg';
 const section = $('#sec3');
 const title = $('.title-3');
 const titleBg = $('.title_bg-3');
-const text = section.find('.flex_text_item');
+const bigImage = $('.section-3_image');
+const text = section.find('.text_box');
 let begin = 0;
 const moveTitle = new MovingTitle(titleBg);
 notice.listen('scroll', (scrollTop) => {
@@ -23,6 +24,7 @@ notice.listen('scroll', (scrollTop) => {
     }
     if (scrollTop > currentPosition - (wHeight * 0.2)) {
       text.removeClass('hide');
+      bigImage.removeClass('hide');
     }
     begin = 1;
   } else {

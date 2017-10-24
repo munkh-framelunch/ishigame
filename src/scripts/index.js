@@ -1,10 +1,9 @@
 import 'babel-polyfill';  // アプリ内で1度だけ読み込む エントリーポイントのてっぺん推奨
 import $ from 'jquery';
 import touchEvents from 'jquery-touch-events';
-import anime from 'animejs';
 
 import notice from 'libraries-frontend-framelunch/js/notice';
-import state from 'libraries-frontend-framelunch/js/state';
+
 import subscribeEvents from './_events';
 import '../modules/modal/modal';
 import '../modules/navigation/navigation';
@@ -51,15 +50,19 @@ class Main {
   constructor() {
     touchEvents($);
     this.onDOMContentLoaded = this.onDOMContentLoaded.bind(this);
-    this.onWindowResize = this.onWindowResize.bind(this);
     this.onScrollTop = this.onScrollTop.bind(this);
   }
 
   onDOMContentLoaded() {
+    $('.load').fadeOut();
+    $('body').css({
+      overflow: 'auto',
+    });
+    notice.publish('init', []); // Publish init
+    $('.main_slide').addClass('begin'); // main slide begin
     if ($(window).scrollTop() > $(window).height()) {
       begin = 1;
     }
-    notice.publish('init', []);
     $('a').on('click', (event) => {
       const hash = $(event.currentTarget)[0].hash;
       const $elm = $(hash);
@@ -68,19 +71,6 @@ class Main {
         goTo($elm.offset().top);
       }
     });
-  }
-
-  onWindowResize($window) {
-    setTimeout(() => {
-      $('.load_progress_container').animate({
-        width: 0,
-      }, 800, () => {
-        $('.load').fadeOut();
-        $('body').css({
-          overflow: 'auto',
-        });
-      });
-    }, 400);
   }
 
   onScrollTop(scrollTop) {
@@ -105,8 +95,36 @@ class Main {
   }
 }
 const main = new Main();
-window.addEventListener('DOMContentLoaded', main.onDOMContentLoaded);
-notice.listen('resize', main.onWindowResize);
+
+const hideLoader = () => {
+  setTimeout(() => {
+    main.onDOMContentLoaded();
+  }, 600);
+};
+
+const loadbar = () => {
+  const img = document.images;
+  const tot = img.length;
+  let c = 0;
+  if (tot === 0) return hideLoader();
+
+  const imgLoaded = () => {
+    c += 1;
+    const perc = parseInt(((100 / tot) * c), 10);
+    $('.load_progress_container').css({
+      width: `${100 - perc}%`,
+    });
+    if (c === tot) return hideLoader();
+  };
+
+  for (let i = 0; i < tot; i += 1) {
+    const tImg = new Image();
+    tImg.onload = imgLoaded;
+    tImg.onerror = imgLoaded;
+    tImg.src = img[i].src;
+  }
+};
+document.addEventListener('DOMContentLoaded', loadbar, false);
 notice.listen('scroll', main.onScrollTop);
 subscribeEvents();
 

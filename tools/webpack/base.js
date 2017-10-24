@@ -32,8 +32,8 @@ const babelOptions = {
 const entry = {
   vendor: [
     // useBuiltIns: trueが効かなくなるためvendorからは外す
-    // 'babel-polyfill',
-    'animejs',
+    'babel-polyfill',
+    // 'animejs',
     'jquery',
   ],
 };

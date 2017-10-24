@@ -21,7 +21,5 @@ conf.script.forEach(script => {
 %>
 <script src="<%= script.match(/^https?:/) != null ? script : `./js/${script}` %>"></script>
 <% }) %>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiwzj6b5Cy_H9-OEdxSSz1hRLn8gvSDjQ&callback=initMap"
-        async defer></script>
 </body>
 </html>

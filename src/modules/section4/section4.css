@@ -1,3 +1,4 @@
+@import "interview.css";
 .title_bg-4 {
     right: 0;
     background: url("/assets/common/main_tit_bg_04.png");
@@ -13,12 +14,11 @@
 }
 .staff {
     &_box {
-        display: flex;
-        flex-wrap: wrap;
         margin-top: 5%;
         margin-bottom: 10vw;
     }
     &_item {
+        float: left;
         width: 50%;
         padding-top: 36%;
         min-height: 300px;
@@ -44,19 +44,19 @@
             }
         }
         &:nth-child(1) {
-            background: url("/assets/image/voice_01.jpg") no-repeat;
+            background: url("/assets/image/voice_01.jpg") no-repeat center center;
             background-size: cover;
         }
         &:nth-child(2) {
-            background: url("/assets/image/voice_02.jpg") no-repeat;
+            background: url("/assets/image/voice_02.jpg") no-repeat center center;
             background-size: cover;
         }
         &:nth-child(3) {
-            background: url("/assets/image/voice_03.jpg") no-repeat;
+            background: url("/assets/image/voice_03.jpg") no-repeat center center;
             background-size: cover;
         }
         &:nth-child(4) {
-            background: url("/assets/image/voice_04.jpg") no-repeat;
+            background: url("/assets/image/voice_04.jpg") no-repeat center center;
             background-size: cover;
         }
     }
@@ -65,6 +65,10 @@
         top: 20px;
         left: 20px;
         width: 55px;
+        @media (--sp) {
+            top: 15px;
+            left: 15px;
+        }
         .on {
             opacity: 0;
         }
@@ -81,11 +85,13 @@
         background-color: #000;
         opacity: 0;
         transition: 0.4s ease-in-out;
+        transform: translateZ(0);
     }
     &_text {
         position: absolute;
         top: 50%;
         left: 50%;
+        width: 80%;
         transform: translate(-50%, -50%);
         color: #fff;
         text-align: center;

@@ -95,20 +95,13 @@ notice.listen('init', () => {
         url: 'sendmail.php',
         data: forumData,
         success: () => {
-          contactAlertContent.html(`
-            <h2 class="txt-center h2">ありがとうございます</h2>
-            <p class="p">Your message delivered.</p>
-          `);
+          setTimeout(() => {
+            notice.publish('showModal', ['#contactAlertDone']);
+          }, 1000);
         },
         error: () => {
-          contactAlertContent.html(`
-            <h2 class="txt-center h2">失敗した</h2>
-            <p class="p">There is something happened. Please try again</p>
-          `);
-        },
-        complete: () => {
           setTimeout(() => {
-            notice.publish('showModal', ['#contactAlert']);
+            notice.publish('showModal', ['#contactAlertError']);
           }, 1000);
         },
       });
@@ -118,6 +111,7 @@ notice.listen('init', () => {
 notice.listen('scroll', (scrollTop) => {
   const pos = getPosition(section);
   const currentPosition = section.offset().top;
+  const wHeight = $(window).height();
   if (pos.pos === 0 && begin === 0) {
     moveTitle.move();
     moveTitle.start();
@@ -127,7 +121,7 @@ notice.listen('scroll', (scrollTop) => {
     moveTitle.stop();
     begin = 0;
   }
-  if (scrollTop > currentPosition + 10) {
+  if (scrollTop > currentPosition - (wHeight * 0.5)) {
     title.removeClass('hide');
   }
 });

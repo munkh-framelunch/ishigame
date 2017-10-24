@@ -39,18 +39,36 @@
     }
     &_text {
         width: 48%;
+        margin-top: 4%;
         @media (--sp) {
             margin-top: 5%;
             width: 100%;
         }
     }
-    &_map {
-        width: 48%;
+    &_image {
+        width: 40%;
         margin-left: 4%;
         @media (--sp) {
             margin-top: 4%;
             width: 100%;
             margin-left: 0;
+        }
+        &_item {
+            position: relative;
+            width: 100%;
+            & + & {
+                margin-top: 40px;
+            }
+            &_caption {
+                height: 10px;
+                float: right;
+                line-height: 0;
+                margin-top: 8px;
+                img {
+                    width: inherit;
+                    height: 100%;
+                }
+            }
         }
     }
 }
@@ -75,14 +93,5 @@
         content: "";
         clear: both;
         display: table;
-    }
-}
-.map {
-    background-color: #ccc;
-    position: relative;
-    width: 100%;
-    padding-top: 70%;
-    & + & {
-        margin-top: 30px;
     }
 }

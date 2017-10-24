@@ -21,7 +21,7 @@ notice.listen('scroll', (scrollTop) => {
     moveTitle.stop();
     begin = 0;
   }
-  if (scrollTop > currentPosition + 10) {
+  if (scrollTop >= currentPosition) {
     title.removeClass('hide');
     image.removeClass('hide');
   }

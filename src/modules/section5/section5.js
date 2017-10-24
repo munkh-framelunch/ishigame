@@ -16,36 +16,24 @@ const fixNumber = (number) => {
 };
 class Slide {
   constructor() {
-    this.length = 9;
+    this.length = 10;
     this.thumb = $('.thumb_box');
     this.thumbItem = $('.thumb_item');
-    this.bigImage = $('#bigImage');
+    this.bigImage = $('.big_image_item');
+    this.bigImageInner = $('.big_image_inner');
     this.currentIndex = $('#currentIndex');
     this.current = 1;
     this.next = $('#next');
     this.prev = $('#prev');
     this.isMoving = false;
-    this.array = [6, 7, 8, 9, 1, 2, 3, 4, 5];
+    this.array = [7, 8, 9, 10, 1, 2, 3, 4, 5];
     this.speed = 400;
+    this.timer = false;
   }
   showBigImage(canChange) {
     if (canChange) {
-      let src = this.bigImage.attr('src');
-      /*
-       this.bigImage.animate({
-       opacity: '0.5',
-       }, this.speed / 2, 'linear', () => {
-       this.bigImage.animate({
-       opacity: 1,
-       }, this.speed / 2, 'linear');
-       });
-       */
-      const beginIndex = src.indexOf('_');
-      const lastIndex = src.indexOf('.jpg');
-      src = `${src.substr(0, beginIndex)}_${fixNumber(this.current)}${src.substr(lastIndex, src.length - 1)}`;
-      const srcBg = src.replace(/gallery_/, 'tmb_');
-      this.bigImage.attr('src', src);
-      this.bigImage.css('background-image', `url("${srcBg}")`);
+      this.bigImage.removeClass('show');
+      this.bigImage.eq(this.current - 1).addClass('show');
       this.currentIndex.html(fixNumber(this.current));
     }
   }
@@ -75,6 +63,7 @@ class Slide {
       });
       this.isMoving = false;
       this.showBigImage(changeBig);
+      this.moveAuto();
     });
   }
   movePrev(speed, changeBig) {
@@ -96,14 +85,23 @@ class Slide {
       }
       $('.thumb_item').eq(8).remove();
       $('.thumb_box').prepend(`
-        <div class="thumb_item"><img src="/assets/image/gallery/tmb_0${this.array[0]}.jpg"></div>
+        <div class="thumb_item"><img src="/assets/image/gallery/tmb_${fixNumber(this.array[0])}.jpg"></div>
       `);
       $('.thumb_box').css({
         left: '0',
       });
       this.isMoving = false;
       this.showBigImage(changeBig);
+      this.moveAuto();
     });
+  }
+  moveAuto() {
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      if (!this.isMoving) {
+        this.moveNext(this.speed, true);
+      }
+    }, 5000);
   }
   init() {
     this.prev.on('click', () => {
@@ -114,6 +112,16 @@ class Slide {
     this.next.on('click', () => {
       if (!this.isMoving) {
         this.moveNext(this.speed, true);
+      }
+    });
+    this.bigImageInner.swipeleft(() => {
+      if (!this.isMoving) {
+        this.moveNext(this.speed, true);
+      }
+    });
+    this.bigImageInner.swiperight(() => {
+      if (!this.isMoving) {
+        this.movePrev(this.speed, true);
       }
     });
     this.thumb.on('click', (current) => {
@@ -140,6 +148,7 @@ class Slide {
         }
       }
     });
+    this.moveAuto();
   }
 }
 notice.listen('init', () => {
