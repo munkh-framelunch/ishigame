@@ -67,10 +67,17 @@ notice.listen('init', () => {
   selectOption.on('click', (i) => {
     select.find('span').html(i.currentTarget.innerText);
     option = i.currentTarget.innerText;
-    select.addClass('hide-option');
+    select.removeClass('show');
   });
-  select.mouseleave(() => {
-    select.removeClass('hide-option');
+  select.on('click', (e) => {
+    const current = $(e.target);
+    if (current.hasClass('contact_input')) {
+      if (current.hasClass('show')) {
+        select.removeClass('show');
+      } else {
+        select.addClass('show');
+      }
+    }
   });
   contactInput.change((i) => {
     $(i.currentTarget).removeClass('alert');

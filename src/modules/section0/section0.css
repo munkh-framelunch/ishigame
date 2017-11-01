@@ -83,6 +83,14 @@
         font-size: 6vw;
         width: 88%;
     }
+    &_bottom {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        img {
+            vertical-align: middle;
+        }
+    }
 }
 .logo {
     padding-top: 40px;

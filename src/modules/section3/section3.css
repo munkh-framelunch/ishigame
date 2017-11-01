@@ -80,4 +80,9 @@
     transform: translateY(-50%);
     background-color: #fff;
     padding-left: 10%;
+
+    span {
+        margin-left: 12px;
+        font-weight: bold;
+    }
 }

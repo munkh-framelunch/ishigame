@@ -137,11 +137,12 @@
     &_select {
         line-height: 1;
         position: relative;
-        &.hide-option {
+        cursor: pointer;
+        &.show {
             .contact_select_box {
-                height: 0 !important;
-                opacity: 0 !important;
-                top: 90% !important;
+                height: auto;
+                opacity: 1;
+                top: 100%;
             }
         }
         &:after {
@@ -153,13 +154,6 @@
             @media (--sp) {
                 top: 10px;
                 right: 10px;
-            }
-        }
-        &:hover {
-            .contact_select_box {
-                height: auto;
-                opacity: 1;
-                top: 100%;
             }
         }
         &_box {
