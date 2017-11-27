@@ -1,10 +1,13 @@
 .title_bg-1 {
     background: url("/assets/common/main_tit_bg_01.png");
 }
+.title-1 {
+    padding-top: 12% !important;
+}
 .text_box-1 {
     width: 50%;
     margin-left: 4%;
-    margin-top: 4%;
+    margin-top: 2%;
     margin-bottom: 35%;
     &:after {
         content: "";
@@ -28,13 +31,37 @@
         margin-left: 0;
         margin-bottom: 0;
     }
+    .mb10 {
+        margin-bottom: 10%;
+    }
+    .bottom_box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        .p {
+            width: 55%;
+            @media (--sp) {
+                width: 100%;
+            }
+        }
+
+        .image {
+            width: 40%;
+            @media (--sp) {
+                width: 100%;
+                margin-top: 10%;
+            }
+        }
+    }
 }
 .section-1_image {
     position: absolute;
     top: 0;
     right: 0;
     width: 50%;
-    padding-top: 10%;
+    padding-top: 14%;
     z-index: -10;
     @media (--sp) {
         position: relative;
