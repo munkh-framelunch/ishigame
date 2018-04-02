@@ -16,7 +16,7 @@ const fixNumber = (number) => {
 };
 class Slide {
   constructor() {
-    this.length = 12;
+    this.length = 21;
     this.thumb = $('.thumb_box');
     this.thumbItem = $('.thumb_item');
     this.bigImage = $('.big_image_item');
@@ -26,7 +26,7 @@ class Slide {
     this.next = $('#next');
     this.prev = $('#prev');
     this.isMoving = false;
-    this.array = [9, 10, 11, 12, 1, 2, 3, 4, 5];
+    this.array = [18, 19, 20, 21, 1, 2, 3, 4, 5];
     this.speed = 400;
     this.timer = false;
   }

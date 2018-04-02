@@ -111,6 +111,7 @@ const loadbar = () => {
   const imgLoaded = () => {
     c += 1;
     const perc = parseInt(((100 / tot) * c), 10);
+    console.log(perc);
     $('.load_progress_container').css({
       width: `${100 - perc}%`,
     });

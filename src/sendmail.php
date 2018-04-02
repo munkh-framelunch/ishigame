@@ -29,7 +29,7 @@ if($msg!=""){
         ."TEL : 0566-75-7301（※TEL受付 : 平日10:00～17:00）\r\n\r\n"
         ."==================================================\r\n"
         ;//
-    $to = 'info@igm.co.jp,k-hosokawa@igm.co.jp';
+    $to = 'info@igm.co.jp,k-hosokawa@igm.co.jp,m-kojima@igm.co.jp';
     $subject = '【株式会社 石亀工業】お問い合わせ完了';
     $encoding = mb_detect_encoding($message, "SJIS,EUC-JP,JIS,UTF-8");
     if ($encoding != "JIS") {
