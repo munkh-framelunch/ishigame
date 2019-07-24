@@ -68,13 +68,13 @@
     "gulp-sourcemaps": "^2.6.0",
     "http-server": "^0.10.0",
     "npm-run-all": "^4.0.2",
-    "postcss-custom-media": "^6.0.0",
-    "postcss-custom-properties": "^6.1.0",
+    "postcss-custom-media": "^7.0.7",
+    "postcss-custom-properties": "^8.0.9",
     "postcss-fixes": "^2.0.1",
-    "postcss-import": "^10.0.0",
+    "postcss-import": "^12.0.1",
     "postcss-loader": "^2.0.6",
-    "postcss-nested": "^2.0.2",
-    "postcss-url": "^7.0.0",
+    "postcss-nested": "^4.1.2",
+    "postcss-url": "^8.0.0",
     "require-dir": "^0.3.2",
     "rimraf": "^2.6.1",
     "run-sequence": "^1.2.2",
@@ -82,7 +82,7 @@
     "stylelint-config-framelunch": "framelunch/stylelint-config-framelunch#v0.1.0",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.9",
-    "webpack": "^3.4.1",
+    "webpack": "^4.29.6",
     "webpack-stream": "^3.2.0"
   }
 }
