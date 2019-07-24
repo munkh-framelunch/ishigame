@@ -69,6 +69,21 @@
                     height: 100%;
                 }
             }
+
+            &_link {
+                float: left;
+                background-color: var(--blue);
+                width: 100px;
+                margin-top: 8px;
+                padding: 7px 10px;
+                line-height: 0;
+                display: block;
+                transition: opacity 0.4s ease-in-out;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
         }
     }
 }
