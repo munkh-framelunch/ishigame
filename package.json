@@ -49,7 +49,7 @@
     "browser-sync": "^2.18.12",
     "css-loader": "^0.28.4",
     "cssnano": "^3.10.0",
-    "eslint": "^3",
+    "eslint": "^4",
     "eslint-config-framelunch": "framelunch/eslint-config-framelunch#v0.1.0",
     "flow-bin": "^0.49.1",
     "flow-typed": "^2.1.2",
