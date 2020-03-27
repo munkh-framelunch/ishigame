@@ -10,6 +10,8 @@
 @import "../modules/section5/section5.css";
 @import "../modules/section6/section6.css";
 @import "../modules/section7/section7.css";
+@import "../modules/global/global.css";
+@import "../modules/global/global-modal.css";
 @import "../modules/modal/modal.css";
 @import "../modules/footer/footer.css";
 body {

@@ -10,6 +10,14 @@
           <option name="port" value="21" />
         </fileTransfer>
       </webServer>
+      <webServer id="0f834f3b-9834-423b-8803-635b399297db" name="test" url="http://157.7.209.239">
+        <fileTransfer host="157.7.209.239" port="22" privateKey="$USER_HOME$/.ssh/id_rsa" rootFolder="/home/framelunch/www/ishigame" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

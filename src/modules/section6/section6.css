@@ -103,6 +103,13 @@
         padding-bottom: 20px;
     }
 }
+.access_image_map {
+    width: 100%;
+    height: 300px;
+    @media (--sp) {
+        height: 50vw;
+    }
+}
 .clearfix {
     &:after {
         content: "";

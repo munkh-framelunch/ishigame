@@ -1,16 +1,37 @@
-import webpack from 'webpack';
-import UglifyJs from 'uglifyjs-webpack-plugin';
-import base from './base';
+const path = require('path');
+const webpack = require('webpack');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-process.noDeprecation = true;
+const conf = require('../config');
+const base = require('./base');
 
-export default Object.assign({}, base, {
-  cache: false,
-  devtool: '',
+const tsconfigPath = path.join(process.cwd(), 'tsconfig.production.json');
+
+module.exports = {
+  ...base,
+  mode: 'production',
+  module: {
+    rules: [
+      ...base.module.rules,
+      {
+        test: /\.[jt]sx?$/,
+        exclude: /node_modules/,
+        use: [
+          'cache-loader',
+          {
+            loader: 'ts-loader',
+            options: {
+              configFile: tsconfigPath,
+              transpileOnly: true,
+            },
+          },
+        ],
+      },
+    ],
+  },
   plugins: [
+    ...base.plugins,
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': "'production'" }),
-    new webpack.LoaderOptionsPlugin({ debug: false }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' })
-    // new UglifyJs(),
-  ]
-});
+    new ForkTsCheckerWebpackPlugin({ tsconfig: tsconfigPath }),
+  ],
+};

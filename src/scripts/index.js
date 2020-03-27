@@ -1,4 +1,3 @@
-import 'babel-polyfill';  // アプリ内で1度だけ読み込む エントリーポイントのてっぺん推奨
 import $ from 'jquery';
 import touchEvents from 'jquery-touch-events';
 
@@ -14,6 +13,7 @@ import '../modules/section4/section4';
 import '../modules/section5/section5';
 import '../modules/section6/section6';
 import '../modules/section7/section7';
+import '../modules/global/global';
 import getPosition from '../modules/position';
 
 $.extend($.easing,
@@ -25,7 +25,6 @@ $.extend($.easing,
   });
 const disableScroll = () => {
   $('body').on('wheel mousewheel', (e) => {
-    e.preventDefault();
     e.stopPropagation();
   });
 };
@@ -111,7 +110,6 @@ const loadbar = () => {
   const imgLoaded = () => {
     c += 1;
     const perc = parseInt(((100 / tot) * c), 10);
-    console.log(perc);
     $('.load_progress_container').css({
       width: `${100 - perc}%`,
     });

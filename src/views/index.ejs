@@ -17,20 +17,21 @@ const og = {
 }
 %>
 
-<% include _head.ejs %>
-<% include ../modules/load/load.ejs %>
+<%- include('./_head.ejs', { conf, og }) %>
+<%- include('../modules/load/load.ejs', { conf }) %>
 <main id="main" class="main" role="main">
-    <% include ../modules/navigation/navigation.ejs %>
-    <% include ../modules/section0/section0.ejs %>
-    <% include ../modules/section1/section1.ejs %>
-    <% include ../modules/section2/section2.ejs %>
-    <% include ../modules/section3/section3.ejs %>
-    <% include ../modules/section4/section4.ejs %>
-    <% include ../modules/section5/section5.ejs %>
-    <% include ../modules/section6/section6.ejs %>
-    <% include ../modules/section7/section7.ejs %>
-    <% include ../modules/modal/modal.ejs %>
+    <%- include('../modules/navigation/navigation.ejs', { conf }) %>
+    <%- include('../modules/section0/section0.ejs', { conf }) %>
+    <%- include('../modules/section1/section1.ejs', { conf }) %>
+    <%- include('../modules/global/global.ejs', { conf }) %>
+    <%- include('../modules/section2/section2.ejs', { conf }) %>
+    <%- include('../modules/section3/section3.ejs', { conf }) %>
+    <%- include('../modules/section4/section4.ejs', { conf }) %>
+    <%- include('../modules/section5/section5.ejs', { conf }) %>
+    <%- include('../modules/section6/section6.ejs', { conf }) %>
+    <%- include('../modules/section7/section7.ejs', { conf }) %>
+    <%- include('../modules/modal/modal.ejs', { conf }) %>
 </main>
-<% include ../modules/footer/footer.ejs %>
+<%- include('../modules/footer/footer.ejs', { conf }) %>
 
-<% include _foot.ejs %>
+<%- include('./_foot.ejs', { conf }) %>

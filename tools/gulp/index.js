@@ -1,35 +1,39 @@
-import gulp from 'gulp';
-import gulpif from 'gulp-if';
-import runSequence from 'run-sequence';
+const gulp = require('gulp');
 
-import conf from '../config';
+const conf = require('../config');
 
-gulp.task('dev', cb => runSequence(
-  'clean',
-  ['view', 'style', 'script'],
-  'server',
-  cb,
-));
+/*
+ * build
+ */
 
-gulp.task('default', ['dev'], () => {
-  gulp.watch(conf.view.watch, ['view']);
-  gulp.watch(conf.style.watch, ['style']);
-  gulp.watch(conf.script.watch, ['script']);
-});
+const buildTasks = [
+  'b.clean',
+  'b.style',
+  'b.view',
+  gulp.parallel(...Object.keys(conf.copy).map(key => `copy:${key}`), 'image'),
+];
+if (conf.image.createWebp) {
+  buildTasks.push('image:webp');
+  buildTasks.push('image:gif2webp');
+}
+if (conf.rev.isEnable) {
+  buildTasks.push('rev');
+  buildTasks.push('rev.replace');
+}
+gulp.task('build', gulp.series(...buildTasks));
 
-gulp.task('build', cb => conf.rev.isEnable ?
-  runSequence(
-    'b.clean',
-    ['b.view', 'b.style', 'b.script'],
-    ['copy.static', 'copy.assets'],
-    'rev',
-    'rev.replace',
-    cb
-  ) :
-  runSequence(
-    'b.clean',
-    ['b.view', 'b.style', 'b.script'],
-    ['copy.static', 'copy.assets'],
-    cb
-  )
+/*
+ * default
+ */
+gulp.task(
+  'default',
+  gulp.series(
+    'clean',
+    'style',
+    'view',
+    gulp.parallel('server', () => {
+      gulp.watch(conf.view.watch, gulp.task('view'));
+      gulp.watch(conf.style.watch, gulp.task('style'));
+    }),
+  ),
 );

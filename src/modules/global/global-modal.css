@@ -1,0 +1,160 @@
+.global-modal {
+    &-box {
+        padding: 6% 6% 0;
+        .h3 {
+            text-align: center;
+            margin-top: 3%;
+            margin-bottom: 5%;
+        }
+    }
+    &-title {
+        width: 48%;
+        margin: 0 auto;
+        @media (--sp) {
+            width: 100%;
+        }
+    }
+    &-part {
+        padding: 6% 0;
+        border-bottom: 3px solid #f0f0f0;
+        @media (--sp) {
+            border-width: 2px;
+            padding: 10% 0;
+        }
+    }
+    &-head0 {
+        width: 66%;
+        margin: 0 auto;
+        @media (--sp) {
+            width: 100%;
+        }
+    }
+    &-head1 {
+        width: 48%;
+        margin: 0 auto;
+        @media (--sp) {
+            width: 86%;
+        }
+    }
+    &-head2 {
+        width: 57%;
+        margin: 0 auto;
+        @media (--sp) {
+            width: 99%;
+        }
+    }
+    &-head3 {
+        width: 47%;
+        margin: 0 auto;
+        @media (--sp) {
+            width: 85%;
+        }
+    }
+    &-head4 {
+        width: 47%;
+        margin: 0 auto;
+        @media (--sp) {
+            width: 85%;
+        }
+    }
+    &-head5 {
+        width: 24%;
+        margin: 0 auto;
+        @media (--sp) {
+            width: 43%;
+        }
+    }
+    &-flex {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        &-item {
+            width: 47%;
+            margin-bottom: 5%;
+            @media (--sp) {
+                width: 100%;
+                margin-bottom: 8%;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .caption2 {
+        width: 86px;
+        margin-left: auto;
+    }
+    .caption3 {
+        width: 63px;
+        margin-left: auto;
+    }
+    .caption4 {
+        width: 90px;
+        margin-left: auto;
+    }
+    &-table {
+        text-align: left;
+        th {
+            width: 40%;
+            padding-right: 30px;
+            font-weight: bold;
+            color: var(--blue);
+            @media (--sp) {
+                width: 30%;
+                padding-right: 10px;
+            }
+        }
+        td, th {
+            vertical-align: top;
+            padding-bottom: 20px;
+        }
+        &.is-bottom {
+            th {
+                width: auto;
+                @media (--sp) {
+                    width: 30%;
+                }
+            }
+        }
+        ul {
+            padding-left: 18px;
+            li {
+                list-style: disc;
+            }
+        }
+    }
+    &-google-map {
+        background-color: #ccc;
+        height: 300px;
+        @media (--sp) {
+            height: 50vw;
+        }
+    }
+    &-content4 {
+        margin-bottom: 10%;
+    }
+    &-content5-table {
+        width: 60%;
+        margin: 0 auto;
+        @media (--sp) {
+            width: 100%;
+        }
+    }
+}
+.global-modal-part2 {
+    &-content {
+        margin-top: 5%;
+    }
+    &-bottom {
+        border-top: 1px solid #000;
+        margin-top: 5%;
+        text-align: right;
+        &-text {
+            background-color: #fff;
+            padding-left: 2%;
+            transform: translateY(-50%);
+            display: inline-block;
+            font-weight: bold;
+        }
+    }
+}
