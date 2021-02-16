@@ -41,6 +41,10 @@
 }
 .section-3_h2 {
     margin-bottom: 5%;
+    white-space: nowrap;
+    @media (--sp) {
+        font-size: 5.5vw !important;
+    }
 }
 .section-3_image {
     position: absolute;

@@ -71,7 +71,7 @@ module.exports = {
 
     view: {
         src: ['src/views/**/*.ejs', '!src/views/**/_*'],
-        watch: ['src/views/**/*.ejs', 'src/components/**/*.ejs'],
+        watch: ['src/views/**/*.ejs', 'src/modules/**/*.ejs'],
         rename(path) {
             // TODO: ちょっと複雑感あるので、一旦コメントアウト
             // if (path.basename === 'index') {

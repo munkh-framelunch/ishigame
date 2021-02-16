@@ -107,6 +107,10 @@ const loadbar = () => {
   let c = 0;
   if (tot === 0) return hideLoader();
 
+  setTimeout(() => {
+    return hideLoader();
+  }, 3000);
+
   const imgLoaded = () => {
     c += 1;
     const perc = parseInt(((100 / tot) * c), 10);
