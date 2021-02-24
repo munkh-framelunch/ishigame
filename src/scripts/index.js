@@ -94,11 +94,15 @@ class Main {
   }
 }
 const main = new Main();
+let done = false;
 
 const hideLoader = () => {
-  setTimeout(() => {
-    main.onDOMContentLoaded();
-  }, 600);
+  if (!done) {
+    done = true;
+    setTimeout(() => {
+      main.onDOMContentLoaded();
+    }, 600);
+  }
 };
 
 const loadbar = () => {
