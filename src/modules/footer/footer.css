@@ -42,7 +42,7 @@
         @media (--sp) {
             width: 88%;
             flex-wrap: wrap;
-            margin-bottom: 0;
+            margin-bottom: 20px;
             justify-content: space-between;
         }
     }
@@ -71,6 +71,23 @@
             top: 20px;
             left: 54%;
             width: 20%;
+        }
+    }
+    &-privacy {
+        position: absolute;
+        bottom: 50px;
+        left: 150px;
+        font-size: 12px;
+        line-height: 25px;
+        a {
+            text-decoration: none;
+            &:hover {
+                color: var(--blue);
+            }
+        }
+        @media (--sp) {
+            left: 6%;
+            bottom: 80px;
         }
     }
 }

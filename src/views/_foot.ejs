@@ -11,7 +11,7 @@
 </script>
 <% } %>
 
-<script src="./js/vendor.bundle.js"></script>
+<script src="<%=conf.rel%>/js/vendor.bundle.js"></script>
 <%
 conf.script = conf.script || [];
 if (typeof conf.script === 'string') {
@@ -19,7 +19,7 @@ if (typeof conf.script === 'string') {
 }
 conf.script.forEach(script => {
 %>
-<script src="<%= script.match(/^https?:/) != null ? script : `./js/${script}` %>"></script>
+<script src="<%= script.match(/^https?:/) != null ? script : `${conf.rel}/js/${script}` %>"></script>
 <% }) %>
 </body>
 </html>

@@ -1,0 +1,115 @@
+<%
+const conf = {
+    title : 'プライバシーポリシー ｜株式会社石亀工業',
+    description : '「プライバシーポリシー」をご覧いただけます。石亀工業はものづくりの基本を忠実に守りながら地域社会とのつながりを大切にし、これからも進化を続けてまいります。',
+    keywords: '安城市 機械製造,安城市 工場,石亀工業,ishigame,いしがめこうぎょう,イシガメコウギョウ',
+    style: 'privacy.css',
+    script: 'privacy.js',
+    rel: '..',
+    ga: 'UA-70673419-14'
+};
+const og = {
+    url: 'http://igm.co.jp/',
+    type: 'website',
+    image: 'http://igm.co.jp/assets/image/ogp.jpg',
+    siteName: '株式会社石亀工業',
+    locale: 'ja_JP'
+}
+%>
+
+<%- include('../_head.ejs', { conf, og }) %>
+<main id="main" class="main" role="main">
+    <div class="privacy-top">
+        <a href="/" class="privacy-top-logo">
+            <img src="<%=conf.rel%>/assets/common/ishigame_logo.png">
+        </a>
+        <div class="privacy-top-bg">
+            <img src="<%=conf.rel%>/assets/common/privacy.png">
+        </div>
+        <div class="privacy-top-text">
+            プライバシーポリシー
+        </div>
+    </div>
+    <div class="privacy-wrapper">
+        <div class="privacy-inner">
+            <div class="privacy-head">
+                個人情報保護基本方針
+            </div>
+            <div class="privacy-text">
+                株式会社石亀工業（以下「当社」といいます。）は、お客様・取引関係者・当社従業者等から取得した個人を特定できる情報（以下、個人情報と総称します）を適切に取り扱うことが、社会的責務と考えております。<br><br>
+                当社が取得した個人情報の取り扱いの基本方針について以下のとおり定め、お客様からご提供いただいた個人情報の漏洩、流用、改ざん等を防止するために法令、ガイドラインおよび当社の内部規則に従い、適切な安全管理策を施し、保有する個人情報の保護に努めます。<br><br>
+                なお、ここでいう「個人情報」とは、当社がお客様から提供を受けた氏名、年齢、電話番号、電子メールアドレス、住所、勤務先等、お客様個人を識別できる情報あるいはお客様個人に固有の情報を意味します。
+            </div>
+            <div class="privacy-head">
+                個人情報の取得
+            </div>
+            <div class="privacy-text">
+                当社が取得する個人情報は、原則としてお客様の意思によりご提供（登録）いただいた情報であるものとします。<br><br>
+                個人情報の取得は、お客様に明示した目的の達成に必要な限度においてこれを行います。なお、当社への個人情報のご提供(登録)を希望されない場合は、お客様自身のご判断により、提供を拒否することができます。<br><br>
+                この場合、当社において、個人情報が必要不可欠なサービスをご利用になれない場合があります。
+            </div>
+            <div class="privacy-head">
+                個人情報の利用目的
+            </div>
+            <div class="privacy-text">
+                当社は、取得した個人情報を、お客様の同意なくして利用目的の範囲を超えて利用することはございません。当社が取得した個人情報は、以下の目的に利用いたします。<br><br>
+                ・お客様・取引関係者等からのご質問・ご要望・ご応募に対する回答・対応を行うこと<br>
+                ・当社が取り扱う製品・サービスなどの企画・研究・開発・品質向上・営業・販売またはそれらに関するご案内を行うこと<br>
+                ・当社における従業員の雇用および人事管理目的<br>
+                ・法令の定め又は行政当局の通達・指導などに基づく対応を行うこと<br>
+                ・その他個人情報取得時に明示した利用目的
+            </div>
+            <div class="privacy-head">
+                個人情報の安全管理措置
+            </div>
+            <div class="privacy-text">
+                当社は、個人情報への不正アクセス、個人情報の破壊・改ざん・漏洩等の防止その他個人情報の安全管理のために、組織的、人的、物理的及び技術的な安全管理措置を適切に講じます。<br>
+                また、必要かつ適切な措置を講じ、従業者および委託先を監督し、適切な管理を行うよう努めてまいります。
+            </div>
+            <div class="privacy-head">
+                個人情報の第三者への提供
+            </div>
+            <div class="privacy-text">
+                当社では、個人情報を提供者ご本人の事前の同意を得た場合を除き、第三者に対して開示することはいたしません。ただし、次に該当する場合は、ご本人の事前の同意を得ることなく、個人情報を第三者に提供することがあります。<br><br>
+
+                ・あらかじめ通知・公表した個人情報の使用目的の達成に必要な範囲において、事前に守秘義務契約を締結した外部業者に	　業務を委託する場合。<br>
+                ・統計的なデータとして、お客様個人を識別できない状態に加工した場合<br>
+                ・人の生命、身体または財産の保護のためであって、ご本人の同意を得ることが困難である場合。<br>
+                ・法令等により提供を求められた場合
+            </div>
+            <div class="privacy-head">
+                個人情報の照会・訂正・削除について
+            </div>
+            <div class="privacy-text">
+                当社が保有するお客様の個人情報に関する照会、誤りがあった場合の訂正または削除を希望される場合は、下記お問い合わせ窓口までご請求ください。開示に必要なお手続きをご案内いたします。当該ご請求がお客様ご本人であることを確認したうえで、合理的な期間及び範囲で、お客様の個人情報を開示、訂正または削除いたします。
+            </div>
+            <div class="privacy-bottom">
+                <div class="bottom-title">
+                    お問い合わせ窓口
+                </div>
+                <div class="bottom-text">
+                    <strong>株式会社石亀工業</strong><br>
+                    電話：0566-75-7301<br>
+                    月〜金 9:00〜17:00<br>
+                    ※年末年始ほか、当社休業日にいただいたお問い合わせについては、翌営業日以降の回答となります。
+                </div>
+            </div>
+            <div class="privacy-text">
+                当社は以上の方針について見直しを行い、改定することがあります。すべての改定はこのページでお知らせします。
+            </div>
+            <div class="privacy-ending">
+                制定日　2021年6月14日<br>
+                株式会社石亀工業
+            </div>
+        </div>
+    </div>
+    <div class="privacy-divider"></div>
+    <div class="privacy-wrapper">
+        <div class="footer-top">
+            <a href="/">TOP</a> ＞プライバシーポリシー
+        </div>
+    </div>
+</main>
+<%- include('../../modules/footer/footer.ejs', { conf }) %>
+
+<%- include('../_foot.ejs', { conf }) %>

@@ -1,0 +1,137 @@
+@import "_global.css";
+@import "_variables.css";
+@import "../modules/footer/footer.css";
+body {
+    background-color: #fff;
+    line-height: 1.8;
+}
+img {
+    width: 100%;
+}
+.main {
+    width: 100%;
+    overflow: hidden;
+    font-size: 16px;
+    letter-spacing: 1px;
+    @media (--tb) {
+        font-size: 14px;
+    }
+    @media (--sp) {
+        letter-spacing: 0;
+    }
+}
+.inner {
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+    position: relative;
+    z-index: 1;
+}
+.txt-center {
+    text-align: center;
+}
+.privacy-top {
+    background-color: var(--blue);
+    height: 21vw;
+    max-height: 300px;
+    min-height: 200px;
+    position: relative;
+    @media (--sp) {
+        max-height: inherit;
+        min-height: inherit;
+        height: 40vw;
+    }
+    &-logo {
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        width: 109px;
+    }
+    &-bg {
+        position: absolute;
+        top: 33%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 46%;
+        max-width: 670px;
+        @media (--sp) {
+            width: 70%;
+            top: 45%;
+        }
+    }
+    &-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 28px;
+        font-weight: bold;
+        color: #fff;
+        letter-spacing: 4px;
+        @media (--tb) {
+            font-size: 2vw;
+        }
+        @media (--sp) {
+            font-size: 4vw;
+            width: 100%;
+            text-align: center;
+            top: 60%;
+        }
+    }
+}
+.privacy-wrapper {
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.privacy-inner {
+    padding: 10% 0;
+}
+.privacy-head {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 2%;
+    @media (--tb) {
+        font-size: 17px;
+    }
+}
+.privacy-bottom {
+    padding: 5%;
+    border: 2px solid #cfcfcf;
+    margin-bottom: 7%;
+    .bottom-title {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 2%;
+        @media (--tb) {
+            font-size: 17px;
+        }
+    }
+    strong {
+        font-weight: bold;
+    }
+}
+.privacy-ending {
+    text-align: right;
+}
+.privacy-text {
+    margin-bottom: 7%;
+}
+.privacy-divider {
+    width: 100%;
+    height: 2px;
+    background-color: #cfcfcf;
+}
+.footer-top {
+    padding: 20px 0 0;
+    font-size: 12px;
+    color: #9a9a9a;
+    a {
+        color: #000;
+        text-decoration: none;
+        &:hover {
+            color: var(--blue);
+        }
+    }
+}

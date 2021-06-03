@@ -111,6 +111,7 @@ module.exports = {
         watch: ['src/**/*.{js,jsx}', 'src/components/**/*.{js,jsx}'],
         entry: {
             'js/index': './src/scripts/index.js',
+            'js/privacy': './src/scripts/privacy.js',
         },
     },
 
