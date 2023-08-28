@@ -1,5 +1,14 @@
 # FRAME LUNCH scaffold for frontend development
 
+## Server info
+FTP
+hs38.drive.ne.jp
+# root
+/home/cs13820/igm.co.jp/htdocs
+# username
+cs138200032
+
+
 ## Requierment
 
 * macOS: >= `10.12`
